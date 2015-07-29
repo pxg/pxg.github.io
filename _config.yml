@@ -33,3 +33,8 @@ defaults:
             type: posts
         values:
             layout: post
+
+collections:
+    work:
+        output: true
+        permalink:  /work/:title/
