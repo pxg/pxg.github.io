@@ -1,0 +1,10 @@
+<ul id="post-list">
+
+    {% assign work_items = site.work | sort: 'date' | reverse %}
+    {% for post in work_items %}
+        <li>
+            <a href='{{ post.url }}'></a>
+            <a href='{{ post.url }}'>{{ post.title }} <h2>{{ post.description }}</h2></a>
+        </li>
+    {% endfor %}
+</ul>
