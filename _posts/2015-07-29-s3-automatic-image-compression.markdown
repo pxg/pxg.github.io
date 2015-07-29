@@ -5,8 +5,6 @@ title:  "S3 Automatic Image Compression"
 date:   2015-07-29 17:25:43
 categories: Python AWS
 ---
-##Overview
-
 The goal of this project is to provide completely automated lossless compression of images uploaded to s3. The project uses the S3 bucket notifications systems to send messages to SQS when a file is uploaded to the bucket.
 
 A Python script reads messages pushed to the queue. When a new message is received the s3 file is downloaded locally. The local file is compressed with mozjpeg, the original S3 file is then replaced with the compressed version.
