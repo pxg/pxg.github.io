@@ -1,18 +1,19 @@
 ---
 layout: work
-description: Warblr
+description: A birdsong recognition app
 title:  "Warblr"
 date:   2015-01-13 17:25:43
+categories: Swift Python
 ---
 
-![McLaren website screenshot](http://petegraham.co.uk/img/mclaren_2012.jpg)
+![Warblr Recording Screen](/assets/images/work/recording.png)
+![Warblr Recording Screen](/assets/images/work/results.png)
 
-Website for McLaren Formula 1 team: during a Grand Prix the dashboard displays live car telemetry and realtime comments from the team.
+ - Technologies: Swift, Objective-C, Python, scikit-learn
+ - Role: Prototyping, mobile development, API development
+ - Client: Queen Mary London University
+ - Company: [Lost Property](http://lostpropertyhq.com/)
+ - URL: [http://warblr.net/](http://warblr.net/)
 
-The next evolution of the website for the 2012 season. The goal was to achieve a more interactive Grand Prix experience for the user. Automation of previously manual systems due to new information available from the McLaren data feed.
-
-A complex build as many different parts of the site were being worked on simultaneously. I oversaw the development, setting milestones and getting the team up and running with the test rig used to simulate races.
-
- - Role: Technical Lead
- - URL: mclaren.com/formula1
- - Technologies: Raphaël JS, Zend Framework, JS/Backbone, NGiNX_HTTP_Push_Module
+<br/>
+An app which can recognise bird species from audio recordings. We worked with Queen Mary’s College who had created the audio classifier using Machine Learning techniques. My role included everything from the initial UI prototypes and iOS app development, through to building an API around the classifier code and provisioning servers for it to run on.

@@ -226,7 +226,7 @@ em, i { font-style: italic; }
 
 }
 
-.post h1 {
+.post h1, h1.post-list {
 	margin-bottom:2 0px;
 	color: #222;
 	font: 300 32px/1.4em "Helvetica Neue", Helvetica,Arial,sans-serif;
@@ -353,8 +353,10 @@ thead th,th {
 }
 
 img {
+	/*
 	width: 100%;
 	max-width: 100%;
+	*/
 	border-radius: 3px;
 }
 
