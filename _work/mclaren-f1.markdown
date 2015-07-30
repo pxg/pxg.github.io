@@ -9,6 +9,7 @@ client: McLaren
 company: Pirata
 company_url: https://www.linkedin.com/company/pirata
 project_url: http://mclaren.com/formula1
+image: mclaren_2012.jpg
 ---
 
 Website for McLaren Formula 1 team: during a Grand Prix the dashboard displays live car telemetry and realtime comments from the team.
