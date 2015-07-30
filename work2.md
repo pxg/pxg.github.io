@@ -1,9 +1,9 @@
 ---
 title: Work
-permalink: work/1/
+permalink: work/2/
 profile: true
-offset: 0
-next_page: 2
+offset: 5
+previous_page: 1
 ---
 
 {% include work-list.html %}

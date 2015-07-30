@@ -1,0 +1,16 @@
+<nav id="post-nav">
+    {% if page.previous_page %}
+        <span class="prev">
+            <a href="/work/{{ page.previous_page }}/" title="Newer Work">
+                <span class="arrow">←</span> Newer Work
+            </a>
+        </span>
+    {% endif %}
+    {% if page.next_page %}
+        <span class="next">
+            <a href="/work/{{ page.next_page }}/">
+                Older Work <span class="arrow">→</span>
+            </a>
+        </span>
+    {% endif %}
+</nav>
