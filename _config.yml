@@ -38,3 +38,6 @@ collections:
     work:
         output: true
         permalink:  /work/:title/
+
+gems:
+    - jekyll-redirect-from
