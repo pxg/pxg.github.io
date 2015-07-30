@@ -2,7 +2,7 @@
 layout: work
 description: Real-time F1 car statistics and comments
 title:  "McLaren F1 2012"
-date:   2012-01-13 17:25:43
+date:   2012-01-15 17:25:43
 technologies: Raphaël JS, Backbone, Zend Framework
 role: Technical Lead
 client: McLaren
