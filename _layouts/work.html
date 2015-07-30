@@ -10,7 +10,21 @@ archive: true
         <h2 class="headline">{{ page.description }}</h2>
     </header>
     <section id="post-body">
+
+        {% if page.image %}
+        <img src="/assets/images/work/{{ page.image }}"/>
+        {% endif %}
+        <ul>
+            <li>Technologies: {{ page.technologies }}</li>
+            <li>Role: {{ page.role }}</li>
+            <li>Client: {{ page.client }}</li>
+            <li>Company: <a href="{{ page.company_url }}">{{ page.company }}</a></li>
+            <li>URL: <a href="{{ page.project_url }}">{{ page.project_url }}</a></li>
+        </ul>
+
+        <br/>
         {{content}}
+
     </section>
 </article>
 <footer id="post-meta" class="clearfix">
