@@ -10,7 +10,7 @@ highlighter: pygments
 paginate: 10
 baseurl: /
 domain_name: 'http://petegraham.co.uk'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-1161798-1'
 disqus_shortname: 'your-disqus-shortname'
 
 # Details for the RSS feed generator
