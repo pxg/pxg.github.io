@@ -30,7 +30,7 @@ Use the [AWS S3 console](https://console.aws.amazon.com/s3/home) to create your 
 ###2. Create an SQS instance
 Use the [AWS SQS console](https://eu-west-1.console.aws.amazon.com/sqs/home) to create a new queue. Next set-up queue's permissions. The fastest (but least secure) way is to allow "Everybody" and "All SQS Actions".
 
-![AWS SQS UI](/assets/images/posts/SQS.png)
+[![AWS SQS UI](/assets/images/posts/SQS_thumb.png)](/assets/images/posts/SQS.png)
 
 ###3. Configure S3 bucket notifications to write to the SQS
 Go to the [AWS S3 console](https://console.aws.amazon.com/s3/home) and select your bucket. Next click the properties button on the top right. Look for the Event section and enter:
@@ -39,7 +39,7 @@ Go to the [AWS S3 console](https://console.aws.amazon.com/s3/home) and select yo
  * SendTo: SQS queue
  * SQS Queue: your-queue-name
 
-![AWS S3 UI](/assets/images/posts/S3_notifications.png)
+[![AWS S3 UI](/assets/images/posts/S3_notifications_thumb.png)](/assets/images/posts/S3_notifications.png)
 
 ### 4. Create an IAM User
 Use the [AWS user console](https://console.aws.amazon.com/iam/home#users) to create a new IAM user. Next give them write access to the S3 bucket. To do this create a new policy and use the following for the policy document:
@@ -85,7 +85,7 @@ The reasons for this will be explained next. You'll need to add this policy:
 
 You'll need to change the resource to match your user. Thankfully the Users ARN is easy to find. Go to the [AWS user console](https://console.aws.amazon.com/iam/home#users), select your user, the information is in the summary.
 
-![AWS User UI](/assets/images/posts/IAM.png)
+[![AWS User UI](/assets/images/posts/IAM_thumb.png)](/assets/images/posts/IAM.png)
 
 ###7.  Create API Credentials
 Finally create an access key and secret, then set the credentials as environment variables for the Python script. This is explained further in the [README](https://github.com/pxg/S3-image-compression/blob/develop/readme.md#installation).
