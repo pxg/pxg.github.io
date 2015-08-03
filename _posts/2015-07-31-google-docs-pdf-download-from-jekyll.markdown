@@ -43,9 +43,9 @@ This is great. I can update my CV and easily have a link where people can get th
 
 #Jekyll Redirects
 
-This site is built with Jekyll and hosted by Github pages. As Github pages is static there isn't a way to provide rewrites like you would with Nginx or Apache.
+This site is built with [Jekyll](http://jekyllrb.com/) and hosted by [Github pages](https://pages.github.com/). As Github pages is static there isn't a way to provide rewrites like you would with Nginx or Apache.
 
-Jekyll provides a redirect mechanism, using jekyll-redirect-from. To install it
+Jekyll provides a redirect mechanism, using [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from). To install it
 {% highlight bash %}
 gem install jekyll-redirect-from
 {% endhighlight %}
@@ -56,7 +56,7 @@ gems:
     - jekyll-redirect-from
 {% endhighlight %}
 
-I want the url [petegraham.co.uk/cv/](petegraham.co.uk/cv/) to be a link to my CV so I create a file called cv.md with the following contents:
+I want the url [petegraham.co.uk/cv/](http://petegraham.co.uk/cv/) to be a link to my CV so I create a file called cv.md with the following contents:
 {% highlight python %}
 ---
 title: Pete Graham CV
