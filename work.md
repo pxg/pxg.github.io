@@ -1,9 +1,9 @@
 ---
 title: Work
+number: 1
 permalink: work/1/
-profile: true
-offset: 0
 next_page: 2
+profile: true
 redirect_from:
   - /work/
 ---

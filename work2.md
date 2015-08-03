@@ -1,8 +1,8 @@
 ---
 title: Work
+number: 2
 permalink: work/2/
 profile: true
-offset: 5
 previous_page: 1
 ---
 
