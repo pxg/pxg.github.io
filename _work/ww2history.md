@@ -1,16 +1,15 @@
 ---
 layout: work
-description: A birdsong recognition app
+description: Award winning World War 2 website
 title:  "ww2history.com"
 date:   2010-01-13 17:25:43
-categories: Swift Python
-technologies: Swift, Objective-C, Python, scikit-learn
-role: Prototyping, mobile development, API development
-client: Queen Mary London University
-company: Lost Property
-company_url: http://lostpropertyhq.com
-project_url: http://warblr.net
-image: warblr.png
+categories: PHP
+technologies: CakePHP, Sphinx Search
+role: Developer
+client: Laurence Rees
+company: Sunday
+company_url: http://wearesunday.com/
+project_url: http://ww2history.com/
+image: ww2.png
 ---
-
-An app which can recognise bird species from audio recordings. We worked with Queen Mary’s College who had created the audio classifier using Machine Learning techniques. My role included everything from the initial UI prototypes and iOS app development, through to building an API around the classifier code and provisioning servers for it to run on.
+Award winning World War 2 website produced for Historian and former Head of BBC TV History Laurence Rees.

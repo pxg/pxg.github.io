@@ -1,5 +1,5 @@
 ---
-title: Work
+title: More work
 number: 2
 permalink: work/2/
 profile: true
