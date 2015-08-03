@@ -5,6 +5,8 @@ title:  "Python and Excel for Data Import"
 date:   2015-01-13 17:25:43
 categories: Python Excel
 ---
+This article was originally written when I was running [Lost Property](http://lostpropertyhq.com/) with [Rachid Belaid](http://rachbelaid.com) and [Rob Berry](http://robb.re/).
+
 It's a common development need to import a large amount of information into a database for use in an application.
 
 A CMS is normally used to input data into a database, when the amount of data is large then using an Excel document can be a good choice.
@@ -183,6 +185,4 @@ This tutorial described a simplified version of what we're using in some project
  - Adding text areas to the Excel file for easier input of large blocks of text.
  - Introspecting the Django models to avoid code duplication.
 
-I'd be happy to provide further information of these in a blog post if it's of particular interest, contact me on Twitter.
-
-**Author:** Pete Graham ([@petexgraham](https://twitter.com/petexgraham)) from [Lost Property](http://lostpropertyhq.com)
+I'd be happy to provide further information of these in a blog post if it's of particular interest.

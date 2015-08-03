@@ -5,7 +5,6 @@ title:  "Google docs PDF download from Jekyll"
 date:   2015-07-31 17:25:43
 categories: Google Jekyll
 ---
-
 For years I'd kept my CV as HTML. When I wanted to update my CV I'd edit the HTML. Editing HTML isn't difficult, but you need to check the page in the browser after, to make sure you've not made a mistake, like missing a closing tag.
 
 The issue I had is recruiters and big companies always wanted a PDF or Word version of my CV. I'm not entirely sure why this is, I guess they must use software to process CVs which expects PDF or Word as input.
