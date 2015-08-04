@@ -248,7 +248,7 @@ em, i { font-style: italic; }
 }
 
 .post h2 {
-	margin-top: 20px;
+	margin: 20px 0 5px 0;
 	font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
 	color: #111;
 }
