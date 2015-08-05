@@ -2,9 +2,8 @@
 layout: post
 description: Challenges with new language version adoption
 title:  "The Python 3 Problem and how Swift side steps it"
-date:   2015-08-02 17:25:43
+date:   2015-08-05 10:48:43
 categories: Python Swift PHP
-draft: true
 ---
 A frequently discussed problem in the Python community is the slow adoption of Python 3. This problem isn't unique to Python, a similar situation happened with the switch from PHP 4 to PHP 5. The new version of the language brought many improvements but introduced backwards incompatible changes. For some the benefits introduced by upgrading didn't outweigh the effort of porting.
 
