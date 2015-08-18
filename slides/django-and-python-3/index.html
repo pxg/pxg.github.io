@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+
+  <!-- TODO: add slide with my details -->
+    <textarea id="source">
+
+class: center, middle
+
+# Django and Python 3
+
+Pete Graham
+
+[petegraham.co.uk/slides/django-and-python-3/](http://petegraham.co.uk/slides/django-and-python-3/)
+
+[@petexgraham](https://twitter.com/petexgraham)
+
+[pete@petegraham.co.uk](mailto:pete@petegraham.co.uk)
+
+
+---
+
+# Coming up
+
+* Introduction
+* Why upgrade to Python 3
+* Thing to do first
+* Steps
+* Installing Python 3
+* Case study
+* Questions
+
+---
+
+# Introduction
+
+* [http://petegraham.co.uk/the-python-3-problem-and-swift/](http://petegraham.co.uk/the-python-3-problem-and-swift/)
+* We all use Django
+* We don't all use Python 3 (in production)
+* How difficult is it to port an existing site?
+
+---
+
+#Why upgrade to Python 3?
+
+1. It's a better language
+2. Technical debt
+
+---
+
+#Thing to do first
+
+* Upgrade to newest Django or LTS
+* Fix security vunerabilities
+* Decent deployment
+* Decent tests
+
+---
+
+#Steps
+
+1. Upgrade Django
+2. Upgrade other libraries to latest Python 2.7 versions
+3. Run 2 to 3 migrations tool
+4. Run site on Python 3
+
+---
+
+#Installing Python 3
+
+[https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+```bash
+mkvirtualenv --python=/usr/local/bin/python3 venv_name
+```
+
+---
+
+# Case study
+
+* Smallish site
+* Originally made in 2013
+* Django 1.5
+
+---
+
+# Functionality
+
+* Multi-step application process
+* Email sending
+* Django Admin for CMS
+* Export Applications as PDF
+
+---
+
+# requirements.txt
+
+```bash
+Django==1.8.3
+Fabric==1.10.2
+Pillow==2.9.0
+django-admin-sortable==1.8.4
+ipython==4.0.0
+paramiko==1.15.2
+psycopg2==2.6.1
+pycrypto==2.6.1
+python-Levenshtein==0.12.0
+wsgiref==0.1.2
+pywurfl==7.2.1
+singledispatch==3.4.0.3
+django-user-agents==0.3.0
+xhtml2pdf==0.0.6
+```
+
+---
+
+# Can I Use Python 3?
+
+```bash
+pip install caniusepython3
+caniusepython3 -r requirements.txt
+
+...
+
+You need 4 projects to transition to Python 3.
+Of those 4 projects, 4 have no direct dependencies blocking their transition:
+
+  django-admin-sortable
+  fabric
+  pywurfl
+  xhtml2pdf
+```
+
+---
+
+# Package 1/4 fabric
+
+* Runs on laptop
+* New version out soon
+* [https://gist.github.com/mok0/99b51e95ceeb4f3fd28b](https://gist.github.com/mok0/99b51e95ceeb4f3fd28b)
+
+---
+
+# Package 2/4 django-admin-sortable
+
+* 1.7.1 and higher are compatible with Python 3
+* caniusepython3 lied!
+
+---
+
+# Package 3/4 pywurfl
+
+* [pywurfl][1] is a [Python][3] language package - [https://pypi.python.org/pypi/pywurfl/](https://pypi.python.org/pypi/pywurfl/)
+* caniusepython3 lied again!
+
+---
+
+# Package 4/4 xhtml2pdf
+
+* Some dicsussion on Github
+* It might work...
+
+---
+
+# Python installing requirements
+
+```bash
+pip install -r requirements.txt
+
+...
+blah blah pip is installing packages
+...
+
+Collecting wsgiref==0.1.2 (from -r requirements.txt (line 10))
+  Downloading wsgiref-0.1.2.zip
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File "<string>", line 20, in <module>
+      File "/private/var/folders/ny/0wbl966d11v2j9brxg1vtqy00000gn/T/pip-build-vaxm8il7/wsgiref/setup.py", line 5, in <module>
+        import ez_setup
+      File "/private/var/folders/ny/0wbl966d11v2j9brxg1vtqy00000gn/T/pip-build-vaxm8il7/wsgiref/ez_setup/__init__.py", line 170
+        print "Setuptools version",version,"or greater has been installed."
+                                 ^
+    SyntaxError: Missing parentheses in call to 'print'
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /private/var/folders/ny/0wbl966d11v2j9brxg1vtqy00000gn/T/pip-build-vaxm8il7/wsgiref
+```
+
+---
+
+#Remove redundant requirements
+
+---
+
+# Getting the site running
+
+```bash
+django-admin runserver
+
+...
+
+  File "/Users/pxg/Projects/graduates/graduates/applicant/admin.py", line 6, in <module>
+    from graduates.applicant.download_as_csv import download_as_csv
+  File "/Users/pxg/Projects/graduates/graduates/applicant/download_as_csv.py", line 103, in <module>
+    @download_as_csv.register(basestring)
+NameError: name 'basestring' is not defined
+```
+
+---
+
+# Remove obsolete code
+
+---
+
+# Getting the site running...
+
+* Run the dev server again
+* Getting a syntax error from xhtml2pdf
+
+---
+
+#Latest versions not always on Pypi
+
+```bash
+pip uninstall xhtml2pdf
+```
+
+Add to requirements.txt
+```bash
+-e git://github.com/chrisglass/xhtml2pdf.git#egg=xhtml2pdf
+```
+
+---
+
+#Encoding Error
+
+Happened after submitting the first step of the form.
+
+```python
+TypeError at /apply
+Unicode-objects must be encoded before hashing
+```
+
+Culprit code
+```python
+instance.hash = hashlib.sha1(string).hexdigest()
+```
+Fix
+```python
+instance.hash = hashlib.sha1(string.encode('utf-8')).hexdigest()
+```
+---
+
+#basestring Error
+
+Happened after submitting step 3 on form. Step 4 is degree information.
+
+```python
+name 'basestring' is not defined
+```
+
+Culprit code
+```python
+if isinstance(value, basestring):
+```
+
+Fix
+```python
+from six import string_types
+if isinstance(value, string_types):
+```
+
+[https://djangosnippets.org/snippets/1688/](https://djangosnippets.org/snippets/1688/)
+
+---
+
+# dict_items Error
+
+Also happend after submitting step 3 of the form. Same snippet.
+
+```python
+'dict_items' object has no attribute 'append'
+```
+
+Culprit code
+```python
+month_choices = MONTHS.items()
+```
+
+Fix
+```python
+month_choices = list(MONTHS.items())
+```
+
+---
+
+# "Object" Errors
+
+Also on step 4. University drop-down.
+
+Culprit code
+```python
+def __unicode__(self):
+    return self.name
+```
+
+Fix
+```python
+def __str__(self):
+    return self.name
+```
+---
+
+# str buffer interface Errors
+
+Happened on download applicants PDF.
+
+```python
+'str' does not support the buffer interface
+```
+
+Culprit code
+```python
+from cStringIO import StringIO
+```
+
+Fix
+```python
+from io import StringIO
+```
+
+---
+
+# iter.next() error
+
+Also happened on download applicants PDF.
+
+Culprit code
+```python
+counter.next()
+```
+
+Fix
+```python
+next(counter)
+```
+
+---
+
+# string argument expected, got 'bytes'
+
+Happened generating Zip file in memory error for applicants PDF.
+
+Change `StringIO` to `ByteIO`. Or can be done as an import.
+
+```python
+from io import ByteIO as StringIO
+```
+
+---
+
+#Conclusion
+
+* Start new projects with Python 3
+* Not all packages support Python 3
+* Port Python 2 projects if you can justify it
+* Most complex code to debug was copy and pasted
+
+---
+
+# Questions?
+
+---
+
+# Thank you
+
+[https://petegraham.co.uk/slides/django-and-python-3/](https://petegraham.co.uk/slides/django-and-python-3/)
+
+[@petexgraham](https://twitter.com/petexgraham)
+
+[pete@petegraham.co.uk](mailto:pete@petegraham.co.uk)
+
+
+
+---
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
