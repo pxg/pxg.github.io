@@ -1,19 +1,18 @@
 ---
 layout: post
-description: Upgrading from Django 1.5 to 1.8
+description: My experience upgrading from Django 1.5 to 1.8
 title:  "Django Upgrade Maverick Style"
-date:   2015-08-17 12:09:00
+date:   2015-08-24 12:09:00
 categories: Python Django
-draft: true
 ---
-I'm upgrading a website, the site was originally made in 2013, and has only had minor edits in the last two years, it's stuck on Django 1.5.
+I'm upgrading a website, the site was originally made in 2013, it's only had minor edits in the last two years, it's stuck on Django 1.5.
 
-The site is for job applications and has a relatively small code base. It let's applicants sign-up with a multistep form, they get an email at the end. The site uses Django Admin for some content management and has a facility so the admin can export all applicant data as PDF. It's a relatively small codebase so I decide I'm going to upgrade the site to Python 3, because I'm that kind of guy. Let the [yak shaving](http://sethgodin.typepad.com/seths_blog/2005/03/dont_shave_that.html) commence!
+The site is for job applications and has a relatively small code base. It let's applicants sign-up with a multistep form, they get emailed when they complete the form. The site uses Django Admin for content management and the admin can export all applicant data as a PDF. It's a relatively small codebase so I decide I'm going to upgrade the site to Python 3, because I'm that kind of guy. Let the [yak shaving](http://sethgodin.typepad.com/seths_blog/2005/03/dont_shave_that.html) commence!
 
 
-Django 1.5 was the first version of Django to support Python 3. So I could try and port the code to Python 3 straight away. However Django 1.5 support finished on September 2nd 2014 so I definitely want to upgrade.
+Django 1.5 was the first version of Django to support Python 3. I could try and port the code to Python 3 straight away. However Django 1.5 support finished on September 2nd 2014 so I definitely want to upgrade.
 
-I could upgrade to 1.7 and have support until December 2015, but I don't want to upgrade to because Django 1.7 is for losers. The newest supported version of Django at the time of writing is 1.8.3. Django 1.8 is an LTS (Long Term Support) version, this will give me support to at least April 2018.
+I could upgrade to 1.7 and have support until December 2015, but I don't want to upgrade to 1.7 because Django 1.7 is for losers. The newest supported version of Django at the time of writing is 1.8.3. Django 1.8 is an LTS (Long Term Support) version, this will give me support to at least April 2018.
 
 We start with the following dependencies
 {% highlight bash %}
@@ -102,7 +101,7 @@ ImproperlyConfigured at /
 Creating a ModelForm without either the 'fields' attribute or the 'exclude' attribute is prohibited; form ApplicationAnswerForm needs updating.
 {% endhighlight %}
 
-Another stack trace, but this time in the browser for some variety. Let try and fix it by editing `forms.py` and adding the `exclude = {}` line.
+Another stack trace, but this time in the browser. Let try and fix it by editing `forms.py` and adding the `exclude = {}` line.
 {% highlight python %}
 class ApplicationAnswerForm(forms.ModelForm):
     class Meta:
@@ -151,14 +150,18 @@ null value in column "require_uk_work_permit_or_visa" violates not-null constrai
 DETAIL:  Failing row contains (123, mr_fake@gmail.com, , Mr, fakey, fako, null, null, null, null, 2015-08-17 15:33:17.064549+00, 2015-08-17 15:33:17.064571+00, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, f, null).
 {% endhighlight %}
 
-Argh! The multi-step form works by saving to the DB on the first step then updating the database at each step.
-I can see that the problem column is `require_uk_work_permit_or_visa`. From running a test on the stage server I can see this field is being set to false after the first step saves. Time to check the models. One of the non-null boolean fields doesn't have a default. I give it a default as explicit is better than implicit.
+Argh!
+
+The multi-step form works by saving to the DB on the first step then updating the database at each step.
+I can see that the problem column is `require_uk_work_permit_or_visa`. From running a manual test on the stage server (which is still running Django 1.5) I can see this field is being set to false after the first step saves. Time to check the models.
+
+The issue is `require_uk_work_permit_or_visa` is a non-null boolean field and it doesn't have a default. I give it a default,  explicit is better than implicit after all.
 
 {% highlight python %}
 require_uk_work_permit_or_visa = models.BooleanField(default=False)
 {% endhighlight %}
 
-All steps of our form now work. Next task is to see what other packages need updating. Pip has a handy options to do this.
+All steps of our form now work. Next task is to see what other packages need updating. Pip has a handy option to do this.
 
 {% highlight bash %}
 pip list --outdated
@@ -195,6 +198,6 @@ django-user-agents==0.3.0
 xhtml2pdf==0.0.6
 {% endhighlight %}
 
-Time to test the new site now we've upgraded packages. Yes more manual testing! I really missed my calling at a QA.
+Time to test the new site now we've upgraded packages. Yes more manual testing! I really missed my calling as a QA.
 
 Ok so now we've upgraded Django and our other requirements. Is the fun over? Hell no it's just started, we'll be upgrading to Python 3 in the next part!
