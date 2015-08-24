@@ -200,4 +200,4 @@ xhtml2pdf==0.0.6
 
 Time to test the new site now we've upgraded packages. Yes more manual testing! I really missed my calling as a QA.
 
-Ok so now we've upgraded Django and our other requirements. Is the fun over? Hell no it's just started, we'll be upgrading to Python 3 in the next part!
+Ok so now we've upgraded Django and our other requirements. Is the fun over? Hell no it's just started, we'll be upgrading to Python 3 in the [next part](/django-and-python-3/).
