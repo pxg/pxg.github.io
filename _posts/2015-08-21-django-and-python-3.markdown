@@ -1,8 +1,8 @@
 ---
 layout: post
-description: Case study of getting a site running on Python 3
+description: Case study of getting a site running on Python 3.4.3
 title:  "Upgrading a Django 1.8 site to Python 3"
-date:   2015-08-24 12:19:00
+date:   2015-08-21 12:19:00
 categories: Python Django
 ---
 In my [last article](/django-upgrade-maverick-style/) I covered the steps of upgrading a Django 1.5 site to 1.8. For my next trick I will port the site to Python 3. But why should we use Python 3 I hear you ask. Python 2.7 is good enough.
@@ -182,7 +182,7 @@ The error occurred because `MONTHS.items()` is a list in Python 2, but a view in
 
 On the final step of the form I notice my form drop-down for University are all displaying as "University Object".
 
-![Universit drop-down](/assets/images/posts/uni_dropdown.png)
+![University drop-down](/assets/images/posts/uni_dropdown.png)
 
 This is fixed by changing
 

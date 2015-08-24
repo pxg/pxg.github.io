@@ -2,7 +2,7 @@
 layout: post
 description: My experience upgrading from Django 1.5 to 1.8
 title:  "Django Upgrade Maverick Style"
-date:   2015-08-24 12:09:00
+date:   2015-08-21 12:09:00
 categories: Python Django
 ---
 I'm upgrading a website, the site was originally made in 2013, it's only had minor edits in the last two years, it's stuck on Django 1.5.
