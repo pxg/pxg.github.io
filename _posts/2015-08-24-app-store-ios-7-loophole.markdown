@@ -31,7 +31,7 @@ As far as I can tell you can only get emulators for older versions of iOS not ol
 
 ##Fixing iOS 7 crash
 
-It turns out the technique to access the users location changed in iOS. Below is the fixed code.
+It turns out the technique to access the users location changed in iOS 8. Below is the fixed code.
 
 {% highlight swift %}
 override func viewDidLoad() {
@@ -56,4 +56,4 @@ When building apps it's best to have physical versions of older Apple Devices ru
 
 I found it strange that Apple didn't catch the iOS 7 bug during the approval process. The Apple App Store review  process is notoriously slow and painful, Warblr was rejected twice before it was approved. However no problems with iOS were mentioned.
 
-I can only conclude that Apple don't test the App on older devices or older versions of iOS. My theory is they don't particularly care about users on old versions or their operating systems and users who use older hardware.
+I can only conclude that Apple don't test the App on older devices or older versions of iOS. My theory is they don't particularly care about users on old versions of their operating systems and users who use older hardware.
