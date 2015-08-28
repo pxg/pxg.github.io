@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>McLaren F1 and Node.js Case Study</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Eric A. Meyer" />
+<meta name="company" content="Complex Spiral Consulting" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>LNUG 25.04.2012</h1>
+<h2>McLaren F1 and Node.js Case Study</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>McLaren F1 and Node.js</h1>
+<!--<h2>[slide show subtitle here]</h2>-->
+
+<h3>Pete X. Graham<br/>
+  Technical Lead - Pirata
+</h3>
+<h4>pete.graham@piratalondon.com</h4>
+
+<!--
+<img src="_includes/images/mclaren_logo.jpg" />
+<img src="_includes/images/nodejs.png" height="280px" width="96px" />
+-->
+</div>
+
+<!-- my interests: node and LAMP systems, playing about with node for a couple of months. TeamGB -->
+
+<!--
+<div class="slide">
+<h1>McLaren.com/formula1</h1>
+<ul>
+<li>Big Build site backed by CMS</li>
+<li>Realtime system to display details of cars on track</li>
+<li>High Traffic</li>
+<li>Currently uses LAMP stack</li>
+<li>Would it be appropriate to rewrite in Node.js</li>
+</ul>
+-->
+
+<div class="slide">
+<h1>mclaren.com/formula1</h1>
+<img src="images/hax.jpg" style="float:right"/>
+<ul>
+<li class="incremental">High traffic/profile</li> <!-- Anonymous joke -->
+<li class="incremental">Big build CMS</li>
+<li class="incremental">Realtime system. Telemetry about race cars
+<ul>
+  <li>Speed</li>
+  <li>Throttle</li>
+  <li>G-force</li>
+  <li>Position on track</li>
+  <li>Laptimes</li>
+  <li>Commentary</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Evolution of Site</h1>
+<ul>
+<li>2010 site <a href="http://vimeo.com/11238103" target="_launch">http://vimeo.com/11238103</a></li>
+<li>2011 site <a href="http://vimeo.com/30428042" target="_launch">http://vimeo.com/30428042</a></li>
+<li>2012 site?</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Long Term Project</h1>
+<ul>
+<li class="incremental">On going Updates</li>
+<li class="incremental">New functionality</li>
+<li class="incremental">Redesign approx every year</li>
+<li class="incremental">Careful with technology choices</li> <!-- bite you on the arse -->
+<li class="incremental">Strive to improve coding/testing/architecture</li> <!-- make your life easier -->
+</ul>
+</div>
+
+<div class="slide">
+<h1>Current Technologies</h1>
+<ul>
+<li class="incremental">LAMP stack</li>
+<li class="incremental">PHP and Zend Framework backend with Doctrine</li>
+<li class="incremental">Custom Daemon</li>
+<li class="incremental">Nginx message module</li>
+<!-- (CDN, javascript frontend, 2010 flash frontend, webfonts)-->
+</div>
+
+<div class="slide">
+<h1>Architecture Diagram</h1>
+
+<a href="images/mclaren_f1_server_diagram.png">
+  <img src="images/mclaren_f1_server_diagram.png" />
+</a>
+<!--
+ - explanation of data coming through
+ - pain in the arse to simulate (VirtualBox running Ubuntu and OS X)
+-->
+</div>
+
+<div class="slide">
+<h1>Why Node.js?</h1>
+<ul>
+  <li class="incremental"><a target="_launch" href="http://www.youtube.com/watch?v=bzkRVzciAZg">Node.js Is Bad Ass Rock Star Tech</a></li> <!-- add image here-->
+  <li class="incremental">Made for realtime event based systems</li>
+  <li class="incremental">Scales well?</li>
+  <li class="incremental">Websockets</li>
+</ul>
+<img style="float:right" src="images/xtranormal.jpg" />
+</div>
+
+<!-- friends photo? -->
+<div class="slide">
+<h1>Node and LAMP</h1>
+<ul>
+  <!-- new technolgy if not a start-up you will have an existing infrastructure -->
+  <li class="incremental">Can they complement each other?</li>
+  <li class="incremental">If we use node to what extend do we use it?</li>
+  <li class="incremental">Initially could keep Nginx server</li>
+</ul>
+<img style="float:right" src="images/odd_couple.jpg" />
+</div>
+
+<div class="slide">
+<h1>Code Needs to...</h1>
+<ol>
+  <li class="incremental">listen to feed</li>
+  <li class="incremental">connect to mysql database. read/write.</li>
+  <li class="incremental">publish to client/nginx</li>
+  <li class="incremental">save images and push to CDN?</li>
+</ol>
+</div>
+
+<div class="slide">
+<h1>RISK!</h1>
+<ul>
+  <li class="incremental">If it's not broke...</li>
+  <li class="incremental">Simulate multiple users?</li>
+  <li class="incremental">How to load test/benchmark current solution?</li>
+</ul>
+<img style="float:right" src="images/risk.jpg" />
+</div>
+
+<!-- nasa or business man photo -->
+<div class="slide">
+<h1>What next?</h1>
+<ul>
+  <li class="incremental">Write node backend</li>
+  <li class="incremental">Beta.mclaren.com (domain may differ)</li>
+  <li class="incremental">Release as open source?</li>
+  <li class="incremental">Replay functionality? Not possible with current system.</li>
+  <li class="incremental">NASA/TFL style open APIs (Mongo DB)</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Thank You</h1>
+<p>
+Pete X. Graham<br/>
+pete.graham@piratalondon.com<br/>
+https://github.com/pxg<br/>
+</p>
+</div>
+
+<!--
+<iframe src="http://player.vimeo.com/video/30428042?title=0&amp;byline=0&amp;portrait=0&amp;color=000000" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><p><a href="http://vimeo.com/30428042">McLaren F1 2011</a> from <a href="http://vimeo.com/piratalondon">Pirata London</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+-->
+
+</div>
+
+</body>
+</html>
