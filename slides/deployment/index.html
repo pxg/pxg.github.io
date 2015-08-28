@@ -1,0 +1,381 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+                 Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--This one seems to work all the time, but really small on ipad-->
+    <!--<meta name="viewport" content="initial-scale=0.4">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" media="all" href="theme/css/default.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+    <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+    <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+    <slide class="logoslide nobackground">
+        <article class="flexbox vcenter">
+            <span><img src="images/google_developers_logo.png"></span>
+        </article>
+    </slide>
+
+    <slide class="title-slide segue nobackground">
+        <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+        <hgroup class="auto-fadein">
+            <h1 data-config-title><!-- populated from slide_config.json --></h1>
+            <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+            <p data-config-presenter><!-- populated from slide_config.json --></p>
+        </hgroup>
+    </slide>
+
+<slide>
+        <hgroup>
+            <h2>Why is deployment important?</h2>
+        </hgroup>
+        <article>
+            <ul class="build">
+                <li>The only place your code can truly be tested is in the live environment</li>
+                <li>Getting code into production code is the ultimate goal</li>
+                <li>...apart from dying in glorious battle</li>
+                <li>"Great Artists ship" - Steve Jobs</li>
+            </ul>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>History Lesson</h2>
+        </hgroup>
+        <article>
+            <ul class="build">
+                <li>FTP</li>
+                <li>LFTP mirror</li>
+                <li>SSH: rsync, svn up</li>
+                <li>Scripted deployment tools</li>
+            </ul>
+        </article>
+    </slide>
+
+
+    <slide>
+        <hgroup>
+            <h2>"It's just dropping files on the server right?" - A. Producer</h2>
+        </hgroup>
+        <article>
+            <p>What else are we doing?</li>
+            <ul class="build">
+                <li>Tag release</li>
+                <li>Install packages / requirements</li>
+                <li>DB migrations</li>
+                <li>Clearing caches</li>
+                <li>Pushing static files to CDN</li>
+                <li>Minification, closure compiler, uglify</li>
+                <li>SaSS/Less compilation</li>
+                <li>Back-ups</li>
+                <li>Restarting services</li>
+                <li>Updating server configuration</li>
+            </ul>
+        </article>
+    </slide>
+
+    <!--
+    NOTE:
+    this could be a seperate talk lose or simplify this slide
+    -->
+    <slide>
+        <hgroup>
+            <h2>WTF is Provisioning?</h2>
+        </hgroup>
+        <article>
+            <ul class="build">
+                <li>Infrastructure Management</li>
+                <li>Configuration as code</li>
+                <li>The automated creation of a fully configured server</li>
+                <li>Updating the configuration of a server</li>
+                <li>Done with a configuration management tool: Chef, Puppet, Salt</li>
+                <li>Overlaps with deployment</li>
+            </ul>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Scripted Deployments</h2>
+        </hgroup>
+        <article>
+            <ul class="build">
+                <li>Anyone can deploy</li>
+                <li>Requires a staging environment too</li>
+                <li>Replaces documentation (to an extent)</li>
+            </ul>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Deployment Tools</h2>
+        </hgroup>
+        <article>
+            <ul>
+                <li>Shell scripts</li>
+                <li>Grunt</li>
+                <li>Fabric</li>
+                <li>Capistrano</li>
+                <li>Rake</li>
+                <li>Make</li>
+                <li>Chef</li>
+                <li>Rpm</li>
+                <li>Buildout</li>
+            </ul>
+        </article>
+    </slide>
+
+    <!-- NOTE: add a fabric 101 to bottom of this slide -->
+    <slide>
+        <hgroup>
+            <h2>Which Deployment Tool to pick?</h2>
+        </hgroup>
+        <article>
+            <p>It depends.</p>
+        </article>
+    </slide>
+
+
+    <!-- NOTE: experiment with including code in presentation, does syntax highlighting work for python? -->
+    <slide>
+        <hgroup>
+            <h2>Code Example 1: Basic Deployment</h2>
+        </hgroup>
+        <article>
+            <p>Uses git pull to get code on server, then runs rsync.</p>
+            <p><a href="python/1_basic_deploy.py">1_basic_deploy.py</a></p>
+        </article>
+    </slide>
+
+
+    <slide>
+        <hgroup>
+            <h2>Code Example 2: Back-up Deployment</h2>
+        </hgroup>
+        <article>
+            <p>More flexibility, let's you choose which git commit to put live. Backs-up site.</p>
+            <p><a href="python/2_backup_deploy.py">2_backup_deploy.py</a></p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Code Example 3: Deploy to multiple servers</h2>
+        </hgroup>
+        <article>
+            <p>Deploy to more than one server</p>
+            <p><a href="python/3_multi_server_series_deploy.py">3_multi_server_series_deploy.py</a></p>
+        </article>
+    </slide>
+
+
+    <!-- Note use sequence diagram here t explain what's happening more fully.
+    Actually use real world example to get deploy times
+    Could actually deploy to a live site.
+    -->
+    <slide>
+        <hgroup>
+            <h2>Code Example 3: Performance</h2>
+        </hgroup>
+        <article>
+            <pre>
+server-1: deploy_code           5 seconds
+server-1: install_requirements  20 seconds
+server-1: backup_database       15 seconds
+server-1: migrate_database      12 seconds
+server-1: collectstatic         10 seconds
+server-1: switch_release        1 second
+server-1: reload_server         1 second
+server-2: deploy_code           5 seconds
+server-2: install_requirements  20 seconds
+server-2: backup_database       15 seconds
+server-2: migrate_database      12 seconds
+server-2: collectstatic         10 seconds
+server-2: switch_release        1 second
+server-2: reload_server         1 second
+            </pre>
+            <p>
+            Total time to deploy = 128 seconds
+            <br/>
+            </p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Code Example 3: Performance continued...</h2>
+        </hgroup>
+        <article>
+            <p>Problems:</p>
+            <ul>
+                <li>Migrate database is run twice, this could be harmful with some operations</li>
+                <li>Potential Downtime</li>
+            </ul>
+            <pre>
+        Server-2 Potential Downtime is from migrate_database starts to reload_server
+        Server-1 Potential Downtime = 12 + 10 + 1 + 1
+                                                                = 24 seconds
+
+        Server-2 Potential Downtime is from migrate_database starts (on server1) to reload_server on server-2
+        Server-2 Potential Downtime = 64 + 24
+                                                                = 88 seconds
+
+        The more servers you have the longer the potential downtimes will become.
+        Server-3 Potential Downtime = 24 + 64 + 64
+                                                                = 152 seconds
+        Server-4 Potential Downtime = 216 seconds
+                </pre>
+            </p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Code Example 4: Parallel deploy with roles</h2>
+        </hgroup>
+        <article>
+            <ul>
+                <li>Have roles for servers, so some tasks are only performed by certain roles</li>
+                <li>Run deployments in parallel</li>
+            </ul>
+            <p><a href="python/4_multi_server_parallel.py">4_multi_server_parallel.py</a></p>
+            <!-- Experiment with code in slide
+            <pre class="prettyprint" data-lang="python">
+def deploy_code(id):
+"""
+Git pull then rsync the site live
+"""
+with cd(env.git_repo_dir):
+    run('git pull')
+    run('rsync -av --delete --exclude .git* ./ %s' % env.release_dir)
+            </pre>
+            -->
+        </article>
+    </slide>
+
+        <slide>
+        <hgroup>
+            <h2>Code Example 4: Performance</h2>
+        </hgroup>
+        <article>
+            <pre>
+server-1 + 2: deploy_code           5 seconds
+server-1 + 2: install_requirements  20 seconds
+server-1 + 2: backup_database       15 seconds
+server-1: migrate_database      12 seconds
+server-1 + 2: collectstatic         10 seconds
+server-1 + 2: switch_release        1 second
+server-1 + 2: reload_server         1 second
+            </pre>
+            <p>
+                Total time to deploy = 64 seconds
+            </p>
+            <pre>
+Server-1 Potential Downtime = 24 seconds
+Server-2 Potential Downtime = 24 seconds
+Server-X Potential Downtime = 24 seconds
+            </pre>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Code Example 5: Two step Deploy</h2>
+        </hgroup>
+        <article>
+            <p>Producer says 64 seconds is too long to have to wait to see those very important copy changes.</p>
+            <ul class="build">
+                <li>Split deployment into prepare deployment and activate deployment</li>
+                <li>Re-work packaging of code to stop crash when one server is much slower than the other.</li>
+            </ul>
+        </article>
+    </slide>
+
+            <slide>
+        <hgroup>
+            <h2>Code Example 5: Performance</h2>
+        </hgroup>
+        <article>
+            <pre>
+# Prepare deploy
+server-1 + 2: deploy_code           5 seconds
+server-1 + 2: install_requirements  20 seconds
+server-1 + 2: backup_database       15 seconds
+server-1 + 2: collectstatic         10 seconds
+
+# Activate deploy
+server-1: migrate_database      12 seconds
+server-1 + 2: switch_release        1 second
+server-1 + 2: reload_server         1 second
+            </pre>
+            <p>
+                Total time to deploy = 64 seconds
+                <br/>
+                Total time to activate deploy = 14 seconds
+            </p>
+            <pre>
+Server-1 Potential Downtime = 14 seconds
+Server-2 Potential Downtime = 14 seconds
+Server-X Potential Downtime = 14 seconds
+            </pre>
+        </article>
+    </slide>
+
+    <slide class="thank-you-slide segue nobackground">
+        <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+        <article class="flexbox vleft auto-fadein">
+            <h2>Thank You!</h2>
+            <p>Slides will be available online.</p>
+        </article>
+        <p class="auto-fadein" data-config-contact>
+            <!-- populated from slide_config.json -->
+        </p>
+    </slide>
+
+    <slide class="logoslide dark nobackground">
+        <article class="flexbox vcenter">
+            <span><img src="images/google_developers_logo_white.png"></span>
+        </article>
+    </slide>
+
+    <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Learn something new - Quick look into an other Python web framework</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Rach Belaid">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/lostproperty.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/tomorrow.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+
+        <img class="logo" src="http://lostpropertyhq.com/static/images/logo.png"/>
+
+        <span class="website"><a href="http://lostpropertyhq.com">lostpropertyhq.com <a></span>
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Using the Github API in Python</h1>
+                    <h3>Creating a client feedback tool<br/>built ontop of Github Issues</h3>
+                    <p>
+                        <small>Created by <a href="http://petegraham.co.uk">Pete
+                                Graham</a> / <a href="http://twitter.com/petexgraham">@petexgraham</a></small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Github API</h2>
+                    <ul>
+                        <li>Good, complete API</li>
+                        <li>Automate workflows</li>
+                        <li>Build tools which integrate with Github</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Github Issues for Project Managment</h2>
+                    <ul>
+                        <li>Developers like Github</li>
+                        <!-- (Pull Request, refernce issue in comments, close in comments)-->
+                        <li>A lot of people don't like JIRA</li>
+                        <!-- , trac, Pivotal tracker. JIRA costs money -->
+                        <li>Succesful open source projects use it</li>
+                        <li>Very simple</li>
+                        <!-- (missing features: priorities, story sizing, burn-down)-->
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Client Feedback Paradox</h2>
+                    <ul>
+                        <li>Feedback sent as Powerpoints, Excel, Emails</li>
+                        <li>We want all issues in one place</li>
+                        <li>But clients can't write good bug reports</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Feedback Tool</h2>
+                    <ul>
+                        <li>Client issues go into Github issues</li>
+                        <li>But with a label so you can triage them</li>
+                        <li>Client doesn't have access to all isssues or source code</li>
+                        <li>Open Source, written in Django <a href="https://github.com/LostProperty/Feedback">https://github.com/LostProperty/Feedback</a></li>
+                    </ul>
+                </section>
+
+                <!--
+                <section>
+                    <h2>Python Github libraries</h2>
+                    <ul>
+                        <li>Search Github on Pypi</li>
+                        <li>use v3 of th API</li>
+                        <li>bloody loads of them</li>
+                    </ul>
+                </section>
+                -->
+
+                <section>
+                    <h2>Pypi Github libraries</h2>
+                    <p>
+                    githubpy<br/>
+                    https://github.com/michaelliao/githubpy/<br/>
+                    https://pypi.python.org/pypi/githubpy/1.1.0<br/>
+                    29 stars
+                    </p>
+                    <br/>
+                    <p>
+                    PyGithub<br/>
+                    https://github.com/dustin/py-github<br/>
+                    https://pypi.python.org/pypi/PyGithub/1.24.0<br/>
+                    135 stars
+                    </p>
+                </section>
+
+                <section>
+                    <h2>PyGithub Example Code</h2>
+<!-- mention you can use a token instead of username and password -->
+<pre><code data-trim>from github import Github
+g = Github("user", "password")
+
+for repo in g.get_user().get_repos():
+    print repo.name</code></pre>
+                </section>
+
+                <section>
+                    <h2>Get Github Issues Code</h2>
+<!-- mention you can use a token instead of username and password -->
+<pre><code data-trim>from github import Github
+g = Github("user", "password")
+
+github_repo = github.get_repo('LostProperty/Feedback_demo')
+filter_label = get_label(github_repo, 'Feedback')
+issues = github_repo.get_issues(labels=[filter_label])
+for issue in issues:
+    print(issue.title)</code></pre>
+                </section>
+
+                <section>
+                    <h2>What next?</h2>
+                    <ol>
+                        <li>Launch MVP</li>
+                        <li>Comments system</li>
+                        <li>Limit high priority tickets</li>
+                        <li>Image upload</li>
+                        <li>Automatically grab support details</li>
+                        <li>Add multiple client/project handling</li>
+                        <li>Launch as a service</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Other Github Issues tools</h2
+                    <ul>
+                        <li>ghi command line interface for Issues</li>
+                        <li>hub create pull requests from issues</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>London Pyramid Meet-up</h2>
+                    <p>
+                    Tuesday 18th March<br/>
+                    Lost Property HQ<br/>
+                    192 St Johns Street<br/>
+                    Clerkenwell
+                    </p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                width: 1200,
+
+
+
+                theme: 'lostproperty', // available themes are in /css/theme
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

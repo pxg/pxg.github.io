@@ -1,0 +1,153 @@
+# Deploymnet
+
+## Intro
+"The only place your code can truly be tested is in the live enivornment"
+
+NOTES:
+ - "Great artists ship" - Steve Jobs
+ - Can be fast to react
+ - Measure of dev team/process quality
+ - Not just about production, staging, QA, shared test environment
+
+## History Lesson (the dark ages)
+ - Started with FTP. Sucked, downtime on transfer, sometimes clients crashed. Didn't delete what was already on the server. No-one really knew what went live
+ - Cyberduck, CuteFTP, Internet Explorer
+
+- LFTP mirror command
+```
+lftp ftp.goatse.cx
+lftp ftp.goatse.cx:~> user pxg@goatse.cx
+lftp ftp.goatse.cx:~> mirror source target
+```
+ - We get SSH access. SCP, Rsync
+ - rsync and svn up better as just copy changes (good except for 20mb Flash files)
+ - svn up/clone (pre-git days)
+
+## "It's just dropping files on the server right?" - A. Producer
+Git pull or Rsync and then we're done. Don't overwrite user uploaded assets (.gitignore, or rsync --exclue)
+
+What else are we doing?
+ - Tag release
+ - Install requirements
+ - DB migrations
+ - Clearing caches (big one)
+ - Pushing static files to CDN
+ - Minification, closure compiler, uglify
+ - SaSS/Less compilation
+ - Back-ups
+ - Roll-backs
+ - Restarting services
+ - Updating server configuration
+
+## "WTF is Provisioning?"
+ - The creation of a fully configured server
+ - The updating the configuration of server
+ - Done with a configuration managment tool: Chef, Puppet, Salt
+ - "Provisioning requires root privilleges deployment doesn't"
+ - Seperate talk in it's self
+
+## Scripted deployments
+ - "Anyone" can deploy
+ - Need a staging environment too (things can go wrong)
+ - Replaces documentation (which can go stale)
+
+## Deployment tools
+ - shell scripts
+ - grunt
+ - fabric
+ - capistrano
+ - rake
+ - make
+ - chef
+ - rpm
+ - buildout
+What's the best fit for your team
+ - I like Fabric, because I like Python and it has some great helpers with common deployment tasks
+
+## Code example 1
+Basic deploy. Use git pull on server then rsync
+
+## Code example 2
+Ability to push different commits. Includes backups.
+
+## Code example 3
+Deploy multiple servers in series
+
+server-1: deploy_code           5 seconds
+server-1: install_requirements  20 seconds
+server-1: backup_database       15 seconds
+server-1: migrate_database      12 seconds
+server-1: collectstatic         10 seconds
+server-1: switch_release        1 second
+server-1: reload_server         1 second
+server-2: deploy_code           5 seconds
+server-2: install_requirements  20 seconds
+server-2: backup_database       15 seconds
+server-2: migrate_database      12 seconds
+server-2: collectstatic         10 seconds
+server-2: switch_release        1 second
+server-2: reload_server         1 second
+
+Total time to deploy = 128 seconds
+we can do better
+
+Problems:
+1. Migrate database is run twice, this could be harmful with some operations
+2. Potential Downtime:
+    Server-2 Potential Downtime is from migrate_database starts to reload_server
+    Server-1 Potential Downtime = 12 + 10 + 1 + 1
+                                = 24 seconds
+
+    Server-2 Potential Downtime is from migrate_database starts (on server1) to reload_server on server-2
+    Server-2 Potential Downtime = 64 + 24
+                                = 88 seconds
+
+    The more servers you have the longer the potential downtimes will become.
+    Server-3 Potential Downtime = 24 + 64 + 64
+                                = 152
+
+    Server-4 Potential Downtime = 24 + 64 + 64 + 64
+                                = 216
+
+
+## Code example 4 - Parallel and roles
+- Have roles for servers, so some tasks are only performed by certain roles
+- Run deployments in parallel
+
+server-1 + 2: deploy_code           5 seconds
+server-1 + 2: install_requirements  20 seconds
+server-1 + 2: backup_database       15 seconds
+server-1: migrate_database      12 seconds
+server-1 + 2: collectstatic         10 seconds
+server-1 + 2: switch_release        1 second
+server-1 + 2: reload_server         1 second
+
+Total time to deploy = 64 seconds
+Server-1 Potential Downtime = 24 seconds
+Server-2 Potential Downtime = 24 seconds
+Server-X Potential Downtime = 24 seconds
+
+All servers have same limited amount of downtime
+Producer says 23 seconds is too long to have to wait to see those very important copy changes.
+
+### Code example 5 - Split the deploy into prepare and activate deploy
+Parallel, strange things happen. Mistake in last example, which can happen if one server is much faster than the other.
+
+# Prepare deploy
+server-1 + 2: deploy_code           5 seconds
+server-1 + 2: install_requirements  20 seconds
+server-1 + 2: backup_database       15 seconds
+server-1 + 2: collectstatic         10 seconds
+
+# Activate deploy
+server-1: migrate_database      12 seconds
+server-1 + 2: switch_release        1 second
+server-1 + 2: reload_server         1 second
+
+Total time to deploy = 64 seconds
+Total time to activate deploy = 13 seconds
+Server-1 Potential Downtime = 13 seconds
+Server-2 Potential Downtime = 13 seconds
+Server-X Potential Downtime = 13 seconds
+
+### Limits to approach is the upload from your machine to the multiple servers, investigating using a build server to distribute the code.
