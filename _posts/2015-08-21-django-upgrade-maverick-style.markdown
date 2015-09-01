@@ -64,7 +64,7 @@ django.db.utils.ProgrammingError: relation "django_content_type" already exists
 
 Argh! A big ugly stack trace. I'm starting to question my cavalier approach. But then I try again but with the `--fake-initial` flag:
 {% highlight bash %}
-$python manage.py runserver --fake-initial
+$python manage.py migrate --fake-initial
 
 ...
 
