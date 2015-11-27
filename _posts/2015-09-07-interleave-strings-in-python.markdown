@@ -7,7 +7,7 @@ categories: Python
 ---
 One programming interview question I've seen is: "Write a function to interleave two strings. You should takes two strings as input and returns one string as output. For example if the input strings are `pete` and `paul` then the output should be `ppeatuel`".
 
-I think this is a good question as it's a little bit tricker than it initially seams. The candidate needs to dig into the problem a bit further by checking what happens when the strings are of different length. Sensible behavior would be to add the extra characters to the end of the return string, if our input strings are `pete graham` and `paul` then the output should be `ppeatuel graham`.
+I think it's a good question as it's a little bit tricker than it initially seams. The candidate needs to dig into the problem a further by checking what happens when the strings are of different length. Sensible behavior would be to add the extra characters to the end of the return string, if our input strings are `pete graham` and `paul` then the output should be `ppeatuel graham`.
 
 When I first saw this question my initial solution was to find the length of the larger of the strings. Then loop from the start to the end of the largest string constructing the return string:
 
@@ -40,18 +40,18 @@ def interleave_strings(string1, string2):
     return list(zip(string1, string1))
 {% endhighlight %}
 
-We need to cast the return value to a list in Python 3 or we'll be returning a `zip object`. Calling the function with the input `pete` and `paul` gives us a list of tuples:
+We need to cast the return value to a list in Python 3 or we'll be returning a `zip object`. Calling the function with the inputs `pete` and `paul` gives us a list of tuples:
 
 {% highlight python %}
 [('p', 'p'), ('e', 'a'), ('t', 'u'), ('e', 'l')]
 {% endhighlight %}
 
-The data structure just needs to be flattened, to get our desired result. However there is a flaw in this solution, to work correctly the strings must be the same length. For example Using `pete graham` and `paul` as the input the output is:
+The data structure just needs to be flattened to get our desired result. However there is a flaw in this solution, to work correctly the strings must be the same length. Using `pete graham` and `paul` as the input our output is:
 {% highlight python %}
 [('p', 'p'), ('e', 'a'), ('t', 'u'), ('e', 'l')]
 {% endhighlight %}
 
-Not good!
+Not good! Our longer string has been truncated.
 
 This can be solved by replacing `zip` with `zip_longest` from the `itertools` module and providing a fill value of an empty string. Note: `zip_longest` was called `izip_longest` in Python 2.
 
@@ -83,7 +83,7 @@ Using our inputs `pete graham` and `paul` this gives us a list as output:
 ['p', 'p', 'e', 'a', 't', 'u', 'e', 'l', ' ', '', 'g', '', 'r', '', 'a', '', 'h', '', 'a', '', 'm', '']
 {% endhighlight %}
 
-The final piece of the puzzle is to join list items to return a string:
+The final piece of the puzzle is to join the list items to return a string:
 
 {% highlight python %}
 from itertools import chain, zip_longest
@@ -94,7 +94,7 @@ def interleave_strings(string1, string2):
 
 This returns the string `ppeatuel graham`. [Wooh!](https://www.youtube.com/watch?v=2sSofokAIiw)
 
-The above code gives us our desired output, however it can be argued it looks a bit cryptic. An alternative solution is to replace the use of `chain` with a longer hand solution that uses list comprehension:
+The above code gives us our desired output, however it can be argued it looks cryptic. An alternative solution is to replace the use of `chain` with a longer hand solution that uses list comprehension:
 
 {% highlight python %}
 from itertools import zip_longest

@@ -43,6 +43,7 @@ Go to the [AWS S3 console](https://console.aws.amazon.com/s3/home) and select yo
 
 ### 4. Create an IAM User
 Use the [AWS user console](https://console.aws.amazon.com/iam/home#users) to create a new IAM user. Next give them write access to the S3 bucket. To do this create a new policy and use the following for the policy document:
+
 {% highlight json %}
 {
     "Statement": [
