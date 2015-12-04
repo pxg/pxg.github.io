@@ -4,18 +4,18 @@ title:  Alembic migrate postgres sequence
 description: Rename posgres sequences when renaming tables
 date:   2015-11-27 09:56:00
 categories: Python
+draft: True
 ---
-I'm a fan of using SQLAlchemy and Posgres, I like to use it with Alembic to managed database migrations. My normal workflow with Alembic is:
+I'm a fan of SQLAlchemy and Posgres, I like to use them with Alembic to manage my database migrations. My normal workflow with Alembic is:
 
 1. Edit SQLAlchemy models
-2. Autogenerate the migration{% highlight bash %}
+2. Auto-generate the migration{% highlight bash %}
 alembic -c alembic.ini revision --autogenerate -m "Migration description"{% endhighlight %}
 3. Run the migration{% highlight bash %}alembic -c alembic.ini upgrade head{% endhighlight %}
 
-Now let's say there's a scenario where I have business critical software which tracks when I buy and eat Marathon bars. Now Marathon bars were renamed to Snickers in 1990 in the UK so it makes sense to update my sofware to reflect this and avoid confusion with legacy chocolate bar naming.
+Let's say I have business critical software which tracks when I buy and eat Marathon bars. Marathon bars were renamed to Snickers in 1990 in the UK so it makes sense to update my software to reflect this, this will help avoid confusion with legacy chocolate bar naming.
 
-
-I have a SQLAlchemy model called `Marathon` which represents a DB table `marathon`. I want to rename the model to `Snickers` and have my DB table called `snickers`. The original `Marathon` model look like this:
+I have a SQLAlchemy model called `Marathon` which represents a DB table `marathon`. I want to rename the model to `Snickers` and have my DB table called `snickers`. The original `Marathon` model looks like this:
 
 {% highlight python %}
 from sqlalchemy.ext.declarative import declarative_base
@@ -66,16 +66,16 @@ def upgrade():
     op.drop_table('marathon')
 {% endhighlight %}
 
-The issue with the migration is it's dropping the marathon table and creating a new snickers table. This is going to be a problem if I want to keep existing data, as it'll be deleted along with the marathon table. I need to manually edit the migration to use the alembic rename table command:
+The migration is dropping the marathon table and creating a new snickers table. This is going to be a problem if I want to keep existing data, as it'll be deleted along with the marathon table. I need to manually edit the migration to use the alembic rename table command:
 
 {% highlight python %}
 def upgrade():
     op.rename_table('marathon', 'snickers')
 {% endhighlight %}
 
-All seams good in the world until I take a look in postgres. Running `\d` shows:
+All seams good in the world until I take a look in Postgres. Running `\d` shows:
 
-{% highlight bash %}
+{% highlight sql %}
 snacks=# \d
               List of relations
  Schema |      Name       |   Type   | Owner
@@ -86,28 +86,53 @@ snacks=# \d
 (3 rows)
 {% endhighlight %}
 
-What is `marathon_id_seq` doing hanging about? On further inspection of the snickers table `\d snickers` I can see that it's used for autoincrementing the id on the snickers table id field:
-{% highlight bash %}
+What is troublesome `marathon_id_seq` doing hanging about?
+
+On further inspection of the snickers table `\d snickers` I can see that `marathon_id_seq` is used for auto-incrementing the id on the snickers table:
+{% highlight sql %}
 snacks=# \d snickers
                                   Table "public.snickers"
  Column |           Type           |                       Modifiers
 --------+--------------------------+-------------------------------------------------------
  id     | integer                  | not null default nextval('marathon_id_seq'::regclass)
- weight | integer                  | not null
- bought | timestamp with time zone | not null
- eaten  | timestamp with time zone | not null
+{% endhighlight %}
+
+I rename the sequence in the migration like this:
+
+{% highlight python %}
+op.execute('ALTER SEQUENCE  marathon_id_seq RENAME TO snickers_id_seq')
+{% endhighlight %}
+
+Are we finished? Of course not, this is development blog post we need at least three things to go wrong. Let's inspect the snickers DB table again to see our last problem:
+
+{% highlight sql %}
+snacks=# \d snickers
+...
 Indexes:
     "marathon_pkey" PRIMARY KEY, btree (id)
 {% endhighlight %}
 
+I've got this pesky index `marathon_pkey` hanging about. I can rename the index in the migration too:
 
-on my database show's there's still a sequence called `xxxx___marathon__xxxx`, running `\d marathon` show that this
-# show autoincrementing sequence is incorrect
+{% highlight python %}
+op.execute('ALTER INDEX marathon_pkey RENAME TO snickers_pkey')
+{% endhighlight %}
+
+This is my finished migration:
+
+{% highlight python %}
+def upgrade():
+    op.rename_table('marathon', 'snickers')
+    op.execute('ALTER SEQUENCE marathon_id_seq RENAME TO snickers_id_seq')
+    op.execute('ALTER INDEX marathon_pkey RENAME TO snickers_pkey')
 
 
-#TODO: talk about indexes (would migration work without them)
-# add extra code for the sequence code
+def downgrade():
+    op.rename_table('snickers', 'marathon')
+    op.execute('ALTER SEQUENCE snickers_id_seq RENAME TO marathon_id_seq')
+    op.execute('ALTER INDEX snickers_pkey RENAME TO marathon_pkey')
+{% endhighlight %}
 
-# Conclusion I'm not aware if this is available in Alembic but contact me if it is. A interest project would be to edit Alembic to automatically detect table renames. Might need a custom command, to realise it's not a drop and create. Detect like git does (check it doesn't have one already).
+Remember kids winners don't do drugs and they always write downgrade database migrations.
 
-# TODO: add versions
+It would be amazing if Alembic could automatically produce these type of rename migrations but I'm not if this is possible to implement. One solution would be to add an extra command to Alembic especially for renaming tables. The code for my example project is over on [Github](https://github.com/pxg/alembic_rename).
