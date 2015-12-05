@@ -21,7 +21,6 @@ I have an SQLAlchemy model called `Marathon` which represents a DB table `marath
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
-
 class Marathon(Base):
     __tablename__ = 'marathon'
     id = Column(Integer, primary_key=True)
@@ -36,7 +35,6 @@ I edit it to look like this:
 {% highlight python %}
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
-
 
 class Snickers(Base):
     __tablename__ = 'snickers'
@@ -125,7 +123,6 @@ def upgrade():
     op.rename_table('marathon', 'snickers')
     op.execute('ALTER SEQUENCE marathon_id_seq RENAME TO snickers_id_seq')
     op.execute('ALTER INDEX marathon_pkey RENAME TO snickers_pkey')
-
 
 def downgrade():
     op.rename_table('snickers', 'marathon')
