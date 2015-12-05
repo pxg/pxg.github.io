@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  Rename Postgres table with Alembic migrations
-description: Rename Posgres sequences when renaming tables
+description: Rename PostgreSQL tables, sequences and indexes
 date:   2015-11-27 09:56:00
 categories: Python
-draft: True
 ---
+In this article I'll discuss the approach I take to rename Postgres tables using Alembic. This includes renaming all references to the old table name such as sequences and indexes.
+
 I'm a fan of SQLAlchemy and Postgres, I like to use them with Alembic to manage my database migrations. My normal workflow with Alembic is:
 
 1. Edit SQLAlchemy models
