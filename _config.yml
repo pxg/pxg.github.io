@@ -5,7 +5,7 @@ meta_description: "Pete Graham's writings about programming & software developme
 aboutPage: true
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 paginate: 10
 baseurl: /
