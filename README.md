@@ -1,6 +1,6 @@
-#petegraham.co.uk
+# petegraham.co.uk
 
-Code for PeteGraham.co.uk based on https://github.com/nickbalestra/kactus.
+Code for petegraham.co.uk based on https://github.com/nickbalestra/kactus.
 
 ## Installation
 
