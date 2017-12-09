@@ -11,7 +11,7 @@ From talking to the users with the issue we found many of them were using the iP
 
 We could advise the people with newer models to upgrade to iOS 8 but this wouldn't work for the iPhone 4 users. The confusing thing was the app had been approved by Apple App Store.
 
-##Emulating iOS 7
+## Emulating iOS 7
 
 The iPhone 4S is the oldest device you can emulate with Xcode 6.4, so this is what we'd tested the app with. Out of the box the iPhone 4S simulator runs with iOS 8.4. You can download an iOS 7.1 simulator by going into:
 
@@ -29,7 +29,7 @@ Click the plus icon in the bottom right hand corner of this screen to add a new 
 
 As far as I can tell you can only get emulators for older versions of iOS not older hardware such as the iPhone 4. Thankfully I was able to recreate the crashing bug with iOS 7, running on any device.
 
-##Fixing iOS 7 crash
+## Fixing iOS 7 crash
 
 It turns out the technique to access the users location changed in iOS 8. Below is the fixed code.
 
@@ -50,7 +50,7 @@ override func viewDidLoad() {
 
 The above code is used in a view controller that implements `CLLocationManagerDelegate`.
 
-##Conclusion
+## Conclusion
 When building apps it's best to have physical versions of older Apple Devices running older versions of iOS.
 
 
