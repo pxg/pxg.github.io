@@ -20,7 +20,7 @@ An overview of my approach for upgrading the site.
 3. Run 2 to 3 migrations tools
 4. Run site on Python 3
 
-##Can I use Python 3?
+## Can I use Python 3?
 
 Install the caniusepython3 package then run it to check your requirements file:
 
@@ -54,7 +54,7 @@ Lessons learnt:
 * Don't believe everything caniusepython3 says.
 * Man-up. Install Python 3 and see what breaks.
 
-##Installing Python 3 Virtual Environments
+## Installing Python 3 Virtual Environments
 
 If you're running a Mac then the easiest way to install Python 3 is to go to [https://www.python.org/downloads/](https://www.python.org/downloads/) download and run the installer. This will install Python 3 but leave the system Python 2.7 as the default. At the time of writing the latest stable version of Python is 3.4.3.
 
@@ -95,7 +95,7 @@ Noooo! There's an error with [wsgiref](https://docs.python.org/2/library/wsgiref
 
 It's been a couple of years since I worked on this site, and to be honest I don't remember what wsgiref is used for. I search in the project and can't find a reference to it, so I remove it. I'm sure we'll find out if we need it later, if not we've dropped a redundant requirement.
 
-##Python 3 code changes
+## Python 3 code changes
 
 Now is the time when you're advised to run the [2to3 Automated code translation tool](https://docs.python.org/2/library/2to3.html). I opt for the "run the site and see what breaks" method instead, as I'm interested in digging into the differences between Python 2 and 3:
 
@@ -204,7 +204,7 @@ From the Django docs: *"On Python 3, as all strings are natively considered Unic
 
 In the Django docs I find their [Porting to Python 3 guide](https://docs.djangoproject.com/en/1.8/topics/python3/). I should have probably read before I started, but who likes to read the instructions!
 
-##One more thing...
+## One more thing...
 
 I think I'm finished but then I go to test downloading applicants as PDF functionality and see:
 
@@ -240,7 +240,7 @@ After a lot of head scratching and a [post](http://stackoverflow.com/questions/3
 from io import ByteIO as StringIO
 {% endhighlight %}
 
-#Conclusion
+## Conclusion
 
 I've been lucky with this site that I've not had to manually port any Python 3 packages. Also a number of the hurdles I hit were caused by redundant requirements or functionality so could be removed rather than fixed.
 
