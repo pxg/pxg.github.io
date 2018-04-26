@@ -17,7 +17,7 @@ UPDATE user SET email = id || '@petegraham.co.uk';
 
 It changes the `user` table's data from this:
 
-ID | email
+id | email
 --- | ---
 1 | jeff@amazon.com
 2 | shingy@aol.com
@@ -25,7 +25,7 @@ ID | email
 
 To this:
 
-ID | email
+id | email
 --- | ---
 1 | 1@petegraham.co.uk
 2 | 2@petegraham.co.uk
