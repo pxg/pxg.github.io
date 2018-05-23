@@ -1,20 +1,22 @@
 ---
 layout: post
-title: Showing data with UK postcodes on a map using Redash
-description: Show datapoints from a Postgres database on a Redash map
-date: 2018-04-26 09:43:00
+title: Showing UK postcode data on a map using Redash
+description: Technique to display datapoints from a Postgres database on a Redash map
+date: 2018-05-23 09:43:00
 categories: Redash Postgres Development SQL Map
 ---
 As many of my readers will know I've recently become a fan of the reporting software <https://redash.io>. A lesser known fact is I'm also a big fan of big bolts. Whenever I'm out and about and I see a cracking bolt I like to take a photo, then like any self respecting bolt enthusiast I log the postcode of where I saw the bolt to my Postgres database.
 
-![Photo of a cracking bolt](/assets/images/posts/cracking-bolt.jpg)
+![Photo of a cracking bolt](/assets/images/posts/cracking-bolt.JPG)
 
-Above a photo of a cracking bolt I saw at Canonbury overground station, postcode N1 2PG.
+Above a photo of a cracking bolt I saw at Canonbury overground station.
 
 Now one day it struct me that it would be great to plot the location of all these big bolts on a map so people could to do a bolt-based tour.
 
 In this post I'll explain how to create a map with Redash that can take data with postcodes from a Postgres table. None of the techniques in this post are bolt specific. This post has been written using Redash 3.0.0 and Postgres 9.5.6.
 
+Mapping postcodes to longitude and latitude
+-------------------------------------------
 The map functionality in Redash requires a latitude and longitude so you need to be able to map from a UK postcode to latitude and longitude coordinates. To do this download [ukpostcodes.zip](https://www.freemaptools.com/download/full-postcodes/ukpostcodes.zip) from [freemaptools.com](https://www.freemaptools.com/download-uk-postcode-lat-lng.htm) and unzip it, you now have a CSV file of the UK postcodes and their latitudes and longitudes.
 
 Next login to your database using `psql` and create the table `location`:
@@ -104,10 +106,10 @@ As you see we now have a cracking map showing you some of the best bolts in Lond
 
 Trade-offs
 ----------
-With all software development they are trade-offs with the choices you make here are those with this technique:
+With all software development they are trade-offs with the design decisions you make. Here are those with the techniques in this article.
 
 ### Storage of location data
-Saving the `location` table data to your Database will bloat it an alternative would be to use [Postgres Foreign Data Wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers) and keep the location database in a seperate database which you can still run a join on. Alternatively you could just populate the location database with the values you need, using a script to call an API such as <https://postcodes.io/> just for the postcodes we want.
+Saving the `location` table data to your database will bloat it, an alternative would be to use [Postgres Foreign Data Wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers) and keep the location data in a seperate database which you can still run a join on. Alternatively you could just populate the location table with the values you need, using a script to call an API such as <https://postcodes.io/> just for the postcodes we want.
 
 ### Map interactions
 The Redash map UI show pins on the map for each of your items and groups them dependent on the zoom level. If you wanted different interaction you may need to use an API such as the Google Maps API to build custom custom behaviour.
