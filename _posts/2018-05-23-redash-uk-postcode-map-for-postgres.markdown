@@ -11,7 +11,7 @@ As many of my readers will know I've recently become a fan of the reporting soft
 
 Above a photo of a cracking bolt I saw at Canonbury overground station.
 
-Now one day it struct me that it would be great to plot the location of all these big bolts on a map so people could to do a bolt-based tour.
+Now one day it struck me that it would be great to plot the location of all these big bolts on a map so people could to do a bolt-based tour.
 
 In this post I'll explain how to create a map with Redash that can take data with postcodes from a Postgres table. None of the techniques in this post are bolt specific. This post has been written using Redash 3.0.0 and Postgres 9.5.6.
 
@@ -38,7 +38,7 @@ For some locked down environments, like Heroku, you may need this alternative sy
 \copy location FROM 'ukpostcodes.csv' WITH CSV;
 ```
 
-Our location table is now populated and we can map postcdes to latitude and longitude coordinates.
+Our location table is now populated and we can map postcodes to latitude and longitude coordinates.
 
 ```
 bolts=# select * from location;
@@ -92,9 +92,9 @@ Now save your query and run it, you should see output like the image below:
 
 ![Screenshot of Redash table UI](/assets/images/posts/redash_bolts_1.png)
 
-One thing to note is the Redash table UI limits the number of decimal places to 2 which is misleading. The more accurate longitude and latitidue is there if you download the dataset.
+One thing to note is the Redash table UI limits the number of decimal places to 2 which is misleading. The more accurate longitude and latitude is there if you download the dataset.
 
-Now click the "+ NEW VISULIZATION" button, which is outlined in red on the screenshot above, then select:
+Now click the "+ NEW VISUALIZATION" button, which is outlined in red on the screenshot above, then select:
 - visualisation type: map
 - Latitude Column Name: latitude
 - Longitude Column Name: longitude
@@ -106,12 +106,16 @@ As you see we now have a cracking map showing you some of the best bolts in Lond
 
 Trade-offs
 ----------
-With all software development they are trade-offs with the design decisions you make. Here are those with the techniques in this article.
+With all software development there are trade-offs with the design decisions you make. Here are those with the techniques in this article.
 
 ### Storage of location data
-Saving the `location` table data to your database will bloat it, an alternative would be to use [Postgres Foreign Data Wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers) and keep the location data in a seperate database which you can still run a join on. Alternatively you could just populate the location table with the values you need, using a script to call an API such as <https://postcodes.io/> just for the postcodes we want.
+Saving the `location` table data to your database will bloat it, an alternative would be to use [Postgres Foreign Data Wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers) and keep the location data in a separate database which you can still run a join on. Alternatively you could just populate the location table with the values you need, using a script to call an API such as <https://postcodes.io/> just for the postcodes we want.
 
 ### Map interactions
 The Redash map UI show pins on the map for each of your items and groups them dependent on the zoom level. If you wanted different interaction you may need to use an API such as the Google Maps API to build custom custom behaviour.
 
 If you enjoyed this and want to try it out Redash read my [running redash on macOs](/running-redash-on-mac-os/) article.
+
+Thanks to [Pete Goodman](https://petegoodman.com/) for correcting the spelling in this article, and more importantly sending me this photo of a marvellous bolt.
+
+![Photos of Gooman's bolt](/assets/images/posts/goobolt.jpg)
