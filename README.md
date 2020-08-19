@@ -35,7 +35,7 @@ jekyll serve
 
 ## Deploying
 
-Simply push to master:
+Simply push to main:
 ```
 git push
 ```
