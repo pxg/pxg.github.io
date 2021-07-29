@@ -38,6 +38,9 @@ collections:
     work:
         output: true
         permalink:  /work/:title/
+    til:
+        output: true
+        permalink:  /TIL/:title/
 
 plugins:
     - jekyll-redirect-from
