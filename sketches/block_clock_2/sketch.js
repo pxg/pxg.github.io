@@ -1,3 +1,7 @@
+// TODO: fill the 2nd minute
+// TODO: figure out why fill breaks when units are 20
+// TODO: expand to work for 3 minutes
+// TODO: expand to work for 10, block will need to be smaller
 const unit = 50;
 const max_timer = 120;
 // TODO: rename items
@@ -10,7 +14,6 @@ function setup() {
     h = unit * 12;
     createCanvas(w, h);
     background('black');
-    //frameRate(180);
 }
 
 function draw() {
@@ -24,7 +27,6 @@ function draw() {
         timer++;
         if (timer <= max_timer) {
             draw_block(timer);
-            // if(timer % 60 == 0) {
         }
     }
 
@@ -32,7 +34,7 @@ function draw() {
     // Could I use a combination of timer and frameCount?
     if (timer >= 60) {
         animation_value++;
-        // TOOD: cap at 255
+        // TODO: cap at 255
         fill_cell(animation_value);
     }
 }
