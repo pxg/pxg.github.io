@@ -1,7 +1,7 @@
 ---
 layout: til
-title:  "Today I learnt about the command line program cal"
-date:   2021-07-29
+title: "Today I learnt about the command line program cal"
+date: 2021-07-29
 ---
 
 Cal is a great little command line program that will render a calendar of the current month in the terminal, great for checking dates very quickly.

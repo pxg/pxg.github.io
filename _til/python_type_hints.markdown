@@ -1,7 +1,7 @@
 ---
 layout: til
-title:  "Today I learnt about Python type hints"
-date:   2021-08-02
+title: "Today I learnt about Python type hints"
+date: 2021-08-02
 ---
 
 Up until today I knew type hints existed in Python and had read code which used them but hadn't written any. I wanted to decide if this is a useful technique for me. Let's say I have the following function:
