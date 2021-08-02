@@ -20,4 +20,4 @@ This site in built using the Jekyll static site builder, I wanted to order the [
 {% endraw %}
 {% endhighlight %}
 
-Whilst aspiring to being an outspoken buffoon I'm no DHH, I only know a little Ruby and didn't invent this technique, I originally found it on [this gist](https://gist.github.com/Phlow/1f27dfafdf2bbcc5c48e).
+Whilst aspiring to be an outspoken buffoon I'm no [DHH](https://twitter.com/dhh), I only know a little Ruby and didn't invent this technique, I originally found it on [this gist](https://gist.github.com/Phlow/1f27dfafdf2bbcc5c48e).
