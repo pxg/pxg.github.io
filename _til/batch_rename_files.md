@@ -2,6 +2,7 @@
 layout: til
 title: "Today I learnt how to batch rename file extensions"
 date: 2021-08-04
+draft: true
 ---
 
 I found myself needed to change all the extensions of files in a folder, in this case the files were using `.markdown` and I wanted to change them all to `.md`.
