@@ -1,7 +1,7 @@
 ---
 layout: til
 title: "Today I learnt how to batch rename file extensions"
-date: 2021-08-04
+date: 2021-08-06
 draft: true
 ---
 
