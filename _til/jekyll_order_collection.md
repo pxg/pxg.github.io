@@ -1,6 +1,6 @@
 ---
 layout: til
-title: "Today I learnt how to order Jekyll collections"
+title: "Today I learnt ordering Jekyll collections"
 date: 2021-08-03
 ---
 
