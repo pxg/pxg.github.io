@@ -1,6 +1,6 @@
 ---
 layout: til
-title: "Today I learnt about Python type hints"
+title: "Today I learnt about Python type hints 🐍"
 date: 2021-08-02
 ---
 

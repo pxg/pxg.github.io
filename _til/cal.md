@@ -1,6 +1,6 @@
 ---
 layout: til
-title: "Today I learnt about the command line program cal"
+title: "Today I learnt about the command line program cal 📅"
 date: 2021-07-29
 ---
 

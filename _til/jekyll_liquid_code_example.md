@@ -1,6 +1,6 @@
 ---
 layout: til
-title: "Today I learnt rendering liquid code examples in Jekyll"
+title: "Today I learnt rendering liquid code examples in Jekyll 👨‍💻"
 date: 2021-08-05
 ---
 
