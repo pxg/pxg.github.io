@@ -12,4 +12,4 @@ It seems that Postgres is not always freeing up space even after it deletes data
 
 [The Postgres docs](https://www.postgresql.org/docs/9.1/sql-vacuum.html) state `VACUUM FULL` takes a long time and exclusively locks the table, it also requires extra disk space, since it writes a new copy of the table and doesn't release the old copy until the operation is complete. So if you're trying to free up space you'll need to increase your HD size first.
 
-![Scary vaccum clearn](/assets/images/til/vacuum.gif)
+![Scary vaccum cleaner](/assets/images/til/vacuum.gif)
