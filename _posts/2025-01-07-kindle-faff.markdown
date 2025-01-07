@@ -64,7 +64,7 @@ I would add that the Kindle USB File Manager App, which comes with the Send to K
 
 ## Conclusion
 
-That was some time of my life I'll not get back! I still like books. I still like Kindles. I now believe what ChatGPT tells me less. I believe what Amazon Customer Support tell me even less! Finally, I am thankful for the help of Reddit users, even if they have questionable opinions about Kiwis.
+That was some time of my life I'll not get back! I still like books. I still like Kindles. I now believe what ChatGPT tells me less. I believe what Amazon Customer Support tell me even less! Finally. I am thankful for the help of Reddit users, even when they have questionable opinions about Kiwis.
 
 Amazon could do a much better job explaining how to transfer books to Kindles via USB. Understandably, they are focused on people buying e-books from them in the Kindle Store and have little motivation to provide a good experience for USB transfer. However, they have chosen to continue to offer this functionality and could do a better job supporting it.
 
