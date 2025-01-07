@@ -49,13 +49,14 @@ At wit's end, I decided to search on Google, like a man from the past, this led 
 
 ChatGPT had lied to me! Not only that, I'd been saved by a Reddit user with a questionably racist user handle!
 
-// add ChatGPT screenshot here
+![Photo of ChatGPT lying to my face](/assets/images/posts/chatgpt-lying.png)
+
 
 To be fair to our AI overlords, this appears to be a source of confusion on the internet (and at Amazon Customer Support), so ChatGPT isn't the only place this is wrong.
 ## Files transfers and formats
 With [OpenMTP](https://openmtp.ganeshrvel.com/) installed, I can now happily transfer files to my Kindle as I've always done. I use [Calibre](https://calibre-ebook.com/) for e-book management and to convert formats, mainly because it does a good job, but also for the amazing logo.
 
-A bit of research reveals that .mobi has been superseded by the .azw3 and .kfx formats, so it's probably best to convert to one of these.
+A bit of research reveals that `.mobi` has been superseded by the `.azw3` and `.kfx` formats, so it's probably best to convert to one of these.
 
 It turns out that [Email to Kindle](https://www.amazon.com/sendtokindle/email) now supports `.epub`; however, I don't think this works if you transfer by USB; Amazon are converting the book for you with Email to Kindle.
 
@@ -67,4 +68,4 @@ That was some time of my life I'll not get back! I still like books. I still lik
 
 Amazon could do a much better job explaining how to transfer books to Kindles via USB. Understandably, they are focused on people buying e-books from them in the Kindle Store and have little motivation to provide a good experience for USB transfer. However, they have chosen to continue to offer this functionality and could do a better job supporting it.
 
-P.S. I now have a 2014 Kindle Paperwhite looking for a good home. Let me know if you either want it or know a charity I could donate it to by either emailing writing@petegraham.co.uk or contacting me on BlueSky [petexgraham.bsky.social](https://bsky.app/profile/petexgraham.bsky.social).
+P.S. I now have a 2014 Kindle Paperwhite looking for a good home. Let me know if you either want it or know a charity I could donate it to by either emailing [writing@petegraham.co.uk](mailto:writing@petegraham.co.uk) or contacting me on BlueSky [petexgraham.bsky.social](https://bsky.app/profile/petexgraham.bsky.social).
