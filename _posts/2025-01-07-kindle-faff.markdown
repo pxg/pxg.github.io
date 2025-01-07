@@ -1,17 +1,18 @@
 ---
 layout: post
-title: Kindle Faff
-description: How to fix connecting a new Kindle to a Mac with USB-c
+title: Faff connecting a new Kindle to a Mac with a USB cable
+description: How to fix transferring books to a 2024 Kindle Paperwhite on MacOS with USB-c
 date: 2025-01-07 09:43:00
 categories: Kindle
 ---
-TLDR: new Kindles don't show up as external drives on MacOS when connected by USB-c, you need a program like OpenMTP to transfer files to them
+**TLDR: new Kindles don't show up as external drives on MacOS when connected by USB-c, you need a program like OpenMTP to transfer files to them**
 
 I'm a big fan of reading on the Kindle mainly for portability reasons, I also enjoy the backlight for reading in lower-light environments.
 
 I've been using one since 2011, and I last upgraded in 2014 when I left my first Kindle on an Airplane by mistake.
 
 In my opinion, Kindle devices are very nicely designed and, in general, need upgrading much less frequently than a mobile phone. However, my trusty 2014 Paperwhite Kindle was getting a bit long in the tooth; whilst still having a good reading experience, it was painfully slow for browsing the Kindle store and transferring books. So I decided to treat myself to a new Kindle on Black Friday. The colour Kindle looked interesting but had mixed reviews, so I went for the new Paperwhite model.
+
 ## Kindle Design
 When the new Kindle arrived, I was pleased to see they'd increased the screen size slightly to 6.8 inches and reduced the Bezel; they'd also added a warmth setting to the backlight and embraced the future by switching to a USB-C port!
 ## Connecting as an External Drive didn't work on MacOS
@@ -19,11 +20,13 @@ I waited until the Christmas Holidays to switch over my devices, everything was 
 
 // insert photo
 
+![Photo of kindle file transfer](/assets/images/posts/kindle-file-transfer.jpg)
+
 Thankfully ChatGPT gave me some troubleshooting steps; upgrade Kindle, upgrade MacOS, factory reset the Kindle, switch it off and on again, blah blah blah. 
 
 None of these worked, including installing the official Amazon MacApp Send to Kindle, so I decided to transfer the files using the [Email to Kindle Service](https://www.amazon.com/sendtokindle/email) for now.
 
-// insert Kinde Y U No show as External Drive meme
+// insert Kindel Y U No show as External Drive meme
 
 My hunch based on ChatGPT's advice and transfer issues on my previous Kindles was that I wasn't using the official Kindle USB cable. However, I confirmed this wasn't the case.
 ## Amazon Customer Support == Turd (get emoji)
