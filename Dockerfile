@@ -18,8 +18,11 @@ RUN bundle install
 # Copy the rest of the site
 COPY . .
 
+# Set Jekyll environment
+ENV JEKYLL_ENV=development
+
 # Expose port 4000
 EXPOSE 4000
 
 # Set the default command
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"] 
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--watch", "--force_polling"] 
