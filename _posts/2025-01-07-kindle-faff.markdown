@@ -68,4 +68,4 @@ That was some time of my life I'll not get back! I still like books. I still lik
 
 Amazon could do a much better job explaining how to transfer books to Kindles via USB. Understandably, they are focused on people buying e-books from them in the Kindle Store and have little motivation to provide a good experience for USB transfer. However, they have chosen to continue to offer this functionality and could do a better job supporting it.
 
-P.S. I now have a 2014 Kindle Paperwhite looking for a good home. Let me know if you either want it or know a charity I could donate it to by either emailing [writing@petegraham.co.uk](mailto:writing@petegraham.co.uk) or contacting me on BlueSky [petexgraham.bsky.social](https://bsky.app/profile/petexgraham.bsky.social).
+P.S. I now have a 2014 Kindle Paperwhite looking for a good home. Let me know if you either want it or know a charity I could donate it to.
