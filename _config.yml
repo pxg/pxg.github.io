@@ -15,7 +15,7 @@ paginate_path: "/page/:num/"
 # Show future posts
 future: true
 
-baseurl: /
+baseurl: ""
 domain_name: 'http://petegraham.co.uk'
 google_analytics: 'UA-1161798-1'
 disqus_shortname: 'your-disqus-shortname'
