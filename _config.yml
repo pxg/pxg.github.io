@@ -8,8 +8,14 @@ aboutPage: true
 markdown: kramdown
 highlighter: rouge
 
+# Pagination settings
 paginate: 10
-baseurl: /
+paginate_path: "/page/:num/"
+
+# Show future posts
+future: true
+
+baseurl: ""
 domain_name: 'http://petegraham.co.uk'
 google_analytics: 'UA-1161798-1'
 disqus_shortname: 'your-disqus-shortname'
@@ -44,4 +50,7 @@ collections:
         permalink:  /TIL/:title/
 
 plugins:
+    - jekyll-paginate
     - jekyll-redirect-from
+    - jekyll-feed
+    - jekyll-seo-tag

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Faff connecting a new Kindle to a Mac with a USB cable
-description: How to fix transferring books to a 2024 Kindle Paperwhite on MacOS with USB-c
+description: How to fix transferring books to a 2024 Kindle Paperwhite on MacOS with USB-C
 date: 2025-01-07 09:43:00
 categories: Kindle
 ---
