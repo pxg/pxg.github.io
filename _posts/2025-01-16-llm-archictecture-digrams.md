@@ -44,6 +44,6 @@ I then abandoned my AI approach and tried tweaking the layout using [mermaidchar
 
 The best way to improve the layout would probably be to learn more about the [Mermaid.js syntax](https://mermaid.js.org/intro/syntax-reference.html) and tweak the code by hand.
 
-To conclude I should have probably just made the diagram myself in something like Miro or Lucid Charts but where would the fun in that have been? I was impressed with Claude's ability to create diagrams, and pleasantly surprised by it's use of Mermaid.js, it still has some way to go with tweaking diagrams but will likely improve over time.
-
 If anyone can suggest good Mermaid.js graphic editing tools let me know, I suspect the use case for Mermaid.js is for relatively simple diagrams in developer documentation. Although their [architecture syntax](https://mermaid.js.org/syntax/architecture.html) looks promising.
+
+To conclude I should have probably just made the diagram myself in something like Miro or Lucid Charts but where would the fun in that have been? I was impressed with Claude's ability to create diagrams, and pleasantly surprised by it's use of Mermaid.js, it still has some way to go with tweaking diagrams but will likely improve over time.
