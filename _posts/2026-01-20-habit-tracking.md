@@ -19,12 +19,16 @@ I decided to start with a simple solution of tracking in a Google Sheet. The she
 
 ## Why it Works
 It works because it's simple yet effective. There are a few principles I've followed.
-- Build flexibility in: one habit is "Getting up by alarm", not "Get up at 6 am", which lets me progressively move my getting up time earlier. It also means I can get up at a different time on the weekend
-- Habits are complementary: if I get up early, I likely have time to meditate. If I don't drink the night before, I'm more likely to get up early. If I sleep well, I'm more likely to exercise, etc.
-- Habits focus on the positive: I track Alcohol Free (AF) days, instead of days I drink
-- Limited number of habits: I have four habits for now, I think that might even be one too many, these are the ones I want to focus on
-- Not overly prescriptive: I want to make sure I exercise regularly. I have a marathon training plan in [Runna](https://www.runna.com/), which can be used for much more specific tracking, so I want to keep it simple here
+- **Build flexibility in**: one habit is "Getting up by alarm", not "Get up at 6 am", which lets me progressively move my getting up time earlier. It also means I can get up at a different time on the weekend
+- **Habits are complementary**: if I get up early, I likely have time to meditate. If I don't drink the night before, I'm more likely to get up early. If I sleep well, I'm more likely to exercise, etc.
+- **Habits focus on the positive**: I track Alcohol Free (AF) days, instead of days I drink
+- **Habits are limited in number**: I have four habits for now, I think that might even be one too many, these are the ones I want to focus on
+- **Habits are not overly prescriptive**: I want to make sure I exercise regularly. I have a marathon training plan in [Runna](https://www.runna.com/), which can be used for much more specific tracking, so I want to keep it simple here
+
+I'll update later in the year on how I get on, let's see if I need to add a habit of writing consistently too.
+
+## Additional Thoughts
+If you're interested in forming and sticking to new habits I recommend [Atomic Habits](https://www.goodreads.com/book/show/40121378-atomic-habits) by James Clear.
 
 I tried some other MacOS desktop widgets but had a similar experience to the iOS apps. One app I liked was [Geektool](https://www.tynsoe.org/geektool/) to show the Google Sheet permanently on my desktop. It's a cool tool, but I did't really like how it looked. I could vibe code a frontend, but that really isn't necessary, as the sheet is helping me track things nicely.
 
-I'll update later in the year on how I get on, let's see if I need to add a habit of writing consistently too.
