@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Habit tracking
+title: Habit Tracking
 description: Establishing and tracking habits so they are done consistently
 date: 2026-01-20 14:52:00
 ---
