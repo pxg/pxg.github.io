@@ -43,8 +43,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .icon-facebook-rect:before { content: '\e803'; }
 
 /* Spacing */
-.post h1, h4, h5, p, .post-body ul, #post-list li, pre {
-    margin-bottom: 20px;
+.post-body p,
+.post-body ul,
+.post-body ol,
+.post-body blockquote,
+.post-body pre,
+.post-body table {
+    margin: 0 0 20px;
 }
 
 .post h3 {
@@ -55,7 +60,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 html, body { height: 100%; }
 
 body {
-    font:16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font:17px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #666;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -173,7 +178,12 @@ a,
     color: #5694f1;
 }
 
-p a { color: #5694f1; }
+p a {
+    color: #5694f1;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
 
 /*Transitions*/
 a,
@@ -201,7 +211,7 @@ ul li {
 }
 
 /* Line Height */
-#post-body, p { line-height:1.7; }
+#post-body, p { line-height:1.6; }
 
 b, strong { font-weight: 500;
   color: #1E2025; }
@@ -241,15 +251,20 @@ em, i { font-style: italic; }
 
 }
 
+.post #post-body {
+    max-width: 68ch;
+    margin: 0 auto;
+}
+
 .post h1, h1.post-list {
-    margin-bottom:2 0px;
+    margin-bottom: 18px;
     color: #222;
-    font: 300 32px/1.4em "Helvetica Neue", Helvetica,Arial,sans-serif;
+    font: 300 30px/1.3em "Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .post h2 {
-    margin: 20px 0 5px 0;
-    font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 28px 0 8px 0;
+    font: 300 24px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #111;
 }
 
@@ -294,8 +309,9 @@ p.small {
 }
 
 blockquote {
-    padding-left: 15px;
+    padding-left: 18px;
     border-left: 3px solid #eee;
+    color: #555;
 }
 
 hr {
@@ -675,5 +691,6 @@ p > code {
     background-clip: padding-box;
     font-family: Monaco,"DejaVu Sans Mono","Courier New",monospace;
     font-size: 14px;
+    line-height: 1.4;
     color: #666;
 }
