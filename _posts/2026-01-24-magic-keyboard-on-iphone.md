@@ -1,17 +1,9 @@
 ---
 layout: post
 title: Magic Keyboard on iPhone
-description: Keyboards, apps and settings for productive article writing on an iPhone
+description: iPhone support for Apple's Magic Keyboard and my initial impressions using it
 date: 2026-01-24 12:07:00
 ---
-
-{% comment %}
-TODO:
-- internal link id="macbook-external-keyboard-and-trackpad-rant"
-- padding on bottom on <p>. Works better locally
-- less padding on top on <h2>
-- check analytics
-{% endcomment %}
 
 [I want to do more writing this year](/writing/) and have been [experimenting with iPhone compatible Bluetooth keyboards](/iphone-writing/) for an ultra portable writing set up. Recently I discovered that the iPhone has surprising good support for Apple’s Magic Keyboard. 
 
