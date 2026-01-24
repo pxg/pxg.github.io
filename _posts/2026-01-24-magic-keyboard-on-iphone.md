@@ -19,7 +19,7 @@ It turns out iOS has surprising good support for this keyboard, likely because t
 
 In a way, using Apple’s Magic Keyboard with an iPhone is the dream combination. I love the layout, as it’s the same as the MacBook keyboard. I’ve used MacBooks for years, so this avoids any of the awkwardness with adjusting to a slightly different layout.
 
-Now I already own a Bluetooth Magic Keyboard, I bought it originally to use with my MacBook, basically I never ended up using it because I much prefer the positioning of the trackpad under the keyboard on the MacBook rather than positioning a trackpad at the side [1].
+Now I already own a Bluetooth Magic Keyboard, I bought it originally to use with my MacBook, basically I never ended up using it because I much prefer the positioning of the trackpad under the keyboard on the MacBook rather than positioning a trackpad at the side. [I've written a rant about this](#macbook-external-keyboard-and-trackpad-rant).
 
 ## Pairing
 The keyboard is easy to pair with the iPhone; you just need to switch it on and make sure it’s not paired with any other devices. Out of the box, the media keys support iOS shortcuts, which is a nice touch.
@@ -52,6 +52,6 @@ As mentioned earlier in the article, I found Command + Space for Spotlight to se
 You can enable full keyboard access/controls, which lets you navigate the iPhone almost completely using the keyboard. Whilst this sounds cool, I found it was actually a bit fiddly and reduced my productivity, so I switched it off.
 
 ## Macbook External Keyboard and Trackpad Rant
-[1] You can attempt to achieve this with an external keyboard and trackpad, but it doesn’t work as nicely for a number of reasons: The top of the trackpad is higher than the bottom of the keyboard, so you need to rig something up so they sit at the same height.
+You can attempt to achieve this with an external keyboard and trackpad, but it doesn’t work as nicely for a number of reasons: The top of the trackpad is higher than the bottom of the keyboard, so you need to rig something up so they sit at the same height.
 
 You can buy devices to do this on Etsy, I also made one at home as a test. However, even with this, the Apple external trackpad has an annoying setting where it doesn’t disable while you’re typing, causing the cursor to move on screen. This is a known issue and different from how the built-in trackpad and keyboard work, rant over.
