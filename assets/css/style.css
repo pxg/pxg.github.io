@@ -43,12 +43,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .icon-facebook-rect:before { content: '\e803'; }
 
 /* Spacing */
-.post-body p,
-.post-body ul,
-.post-body ol,
-.post-body blockquote,
-.post-body pre,
-.post-body table {
+#post-body p,
+#post-body ul,
+#post-body ol,
+#post-body blockquote,
+#post-body pre,
+#post-body table {
     margin: 0 0 20px;
 }
 
