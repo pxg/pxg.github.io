@@ -5,9 +5,7 @@ description: iPhone support for Apple's Magic Keyboard and my initial impression
 date: 2026-01-24 12:07:00
 ---
 
-[I want to do more writing this year](/writing/) and have been [experimenting with iPhone compatible Bluetooth keyboards](/iphone-writing/) for an ultra portable writing set up. Recently I discovered that the iPhone has surprising good support for Apple’s Magic Keyboard. 
-
-It turns out iOS has surprising good support for this keyboard, likely because there's a popular iPad version which doubles as a case.
+[I want to do more writing this year](/writing/) and have been [experimenting with iPhone compatible Bluetooth keyboards](/iphone-writing/) for an ultra portable writing set up. Recently I discovered that the iPhone has surprising good support for Apple’s Magic Keyboard,  likely because there's a popular iPad version which doubles as a case which has led to good iOS support.
 
 In a way, using Apple’s Magic Keyboard with an iPhone is the dream combination. I love the layout, as it’s the same as the MacBook keyboard. I’ve used MacBooks for years, so this avoids any of the awkwardness with adjusting to a slightly different layout.
 
