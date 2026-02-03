@@ -11,4 +11,8 @@ Firstly I have the laptop with me as I plan to do some work between meetings, it
 
 ![Hilarious Thameslink meme](/assets/images/posts/thameslink.jpg)
 
-Secondly, the seats on Thameslink trains don't have tables. The advantage of a laptop is you can use it on your lap [insert meme]. Even with an ultra portable iPhone keyboard set-up I'd be unable to use it, unless I had some sort of bizarre device to strap the iPhone in front of my face. So for now I'll be sticking with my laptop or maybe it's time I invest in the Apple Vision Pro [insert machine man meme].
+Secondly, the seats on Thameslink trains don't have tables. The advantage of a laptop is you can use it on your lap. Even with an ultra portable iPhone keyboard set-up I'd be unable to use it, unless I had some sort of bizarre device to strap the iPhone in front of my face. So for now I'll be sticking with my laptop or maybe it's time I invest in the Apple Vision Pro.
+
+{% comment %}
+[insert macho man meme].
+{% endcomment %}
