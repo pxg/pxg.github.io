@@ -1,6 +1,6 @@
 ---
 title: Publishing Jekyl articles from an iPhone
-date: 2026-02-05
+date: 2026-02-06
 layout: post
 ---
 This site is built using Jekyl and GitHub pages. I’ve recently started writing articles on my phone, using Obsidian, but my publishing workflow involved me jumping on my laptop and publishing the post using Cursor and Git.
