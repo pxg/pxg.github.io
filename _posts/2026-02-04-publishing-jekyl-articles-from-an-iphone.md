@@ -11,4 +11,6 @@ You log-in to Pages CMS with your GitHub account, give it access to the repo and
 
 Pages CMS needs a configuration file, I had Google Gemini create this for me. Then boom I was ready to go!
 
+![](/assets/images/posts/IMG_8770.gif)
+
 Initial impressions are good, the editor can be a bit fiddly on the iPhone in particular adding in links. But the main thing is this has made it significantly easier for me to edit and update articles.
