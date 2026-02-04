@@ -15,4 +15,4 @@ Pages CMS needs a configuration file, I had Google Gemini create this for me. Th
 
 Initial impressions are good, the editor can be a bit fiddly on the iPhone in particular adding in links. The image support is surprisingly good and easy to use.
 
-The main thing is this has made it significantly easier for me to edit and update articles which is exactly what I was looking for.
+The main thing is this has made it significantly easier for me to edit and update articles which is exactly what I was looking for. If you want to do something more; make it easy!
