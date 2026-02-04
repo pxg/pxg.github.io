@@ -1,1 +1,32 @@
-testing on CMS
+# 1. Configure where images are stored and how they are linked
+media:
+  input: assets/images/posts
+  output: /assets/images/posts
+
+# 2. Configure the article editor
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    # Standard Jekyll naming: 2023-10-27-title.md
+    filename: "{year}-{month}-{day}-{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: layout
+        label: Layout
+        type: string
+        default: post
+        hidden: true
+      - name: image
+        label: Featured Image
+        type: image
+        description: "Select a cover image for this post"
+      - name: body
+        label: Content
+        type: rich-text
