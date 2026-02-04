@@ -13,4 +13,4 @@ Firstly I have the laptop with me as I plan to do some work between meetings, it
 
 Secondly, the seats on Thameslink trains don't have tables. The advantage of a laptop is you can use it on your lap. Even with an ultra portable iPhone keyboard set-up I'd be unable to use it, unless I had some sort of bizarre device to strap the iPhone in front of my face. So for now I'll be sticking with my laptop or maybe it's time I invest in the Apple Vision Pro.
 
-![Machoman Vision Pro](/assets/images/posts/machoman.jpg)
+![Machoman Vision Pro](/assets/images/posts/macho.jpg)
