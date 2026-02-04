@@ -5,7 +5,7 @@ layout: post
 ---
 This site is built using Jekyl and GitHub pages. I’ve recently started writing articles on my phone, using Obsidian, but my publishing workflow involved me jumping on my laptop and publishing the post using Cursor and Git.
 
-Some quick research revealed they are many options for CMS that can integrate with Jekyl based sites, I decided to try [https://app.pagescms.org](https://app.pagescms.org) as the set-up sounded simplest.
+Some quick research revealed they are many options for CMS that can integrate with Jekyl based sites, I decided to try [https://app.pagescms.org](https://app.pagescms.org) as the set-up sounded simplest and I liked the fact it’s open source.
 
 You log-in to Pages CMS with your GitHub account, give it access to the repo and install the integration on GitHub.
 
