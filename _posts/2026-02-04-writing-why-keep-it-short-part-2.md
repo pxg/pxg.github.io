@@ -1,6 +1,6 @@
 ---
 title: Writing Why Keep It Short? Part 2
-date: 2026-02-04
+date: 2026-02-05
 layout: post
 ---
 With my writing attempts previously I’d often been overly ambitious then not manage to publish articles.
