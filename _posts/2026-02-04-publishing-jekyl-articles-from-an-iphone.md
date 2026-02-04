@@ -13,4 +13,4 @@ Pages CMS needs a configuration file, I had Google Gemini create this for me. Th
 
 ![](/assets/images/posts/IMG_8770.gif)
 
-Initial impressions are good, the editor can be a bit fiddly on the iPhone in particular adding in links. But the main thing is this has made it significantly easier for me to edit and update articles.
+Initial impressions are good, the editor can be a bit fiddly on the iPhone in particular adding in links. But the main thing is this has made it significantly easier for me to edit and update articles which is exactly what I was looking for.
