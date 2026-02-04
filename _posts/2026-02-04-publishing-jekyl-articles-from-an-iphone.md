@@ -1,5 +1,5 @@
 ---
-title: Publishing Jekyl articles from an iPhone
+title: Publishing Jekyll Articles from an iPhone
 date: 2026-02-06
 layout: post
 ---
