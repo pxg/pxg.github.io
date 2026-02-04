@@ -14,4 +14,4 @@ Keeping it short if a forcing function to:
 2.  Have me finish and publish the article
     
 
-I’ve also been impressed by other people who have written short content which I’ve enjoyed such as Rui (who has stopped for now but I’d encourage to start again) and [Seth Goodwin](https://seths.blog).
+I’ve also been impressed by other people who have written short content which I’ve enjoyed such as [Rui Peres](https://ruiper.es) (who has stopped for now but I’d encourage to start again) and [Seth Goodwin](https://seths.blog).
