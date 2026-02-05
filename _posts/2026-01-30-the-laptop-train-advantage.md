@@ -1,10 +1,7 @@
 ---
+title: Why I’m Still Using a Laptop to Write on Trains
 layout: post
-title: The Laptop Train Advantage
-description: Why using a laptop is still the best set-up for writing on train
-date: 2026-01-30 09:30:00
 ---
-
 I've been experimenting with [different iPhone writing set-ups](/iphone-writing-stand/), today I'm heading into London and I'm writing this on the train on my laptop for a couple of reasons.
 
 Firstly I have the laptop with me as I plan to do some work between meetings, it's due diligence report writing which involves moving between multiple documents, fact checking and writing the actual report. This sort of task switching isn't great on an iPhone also many of the documents are PDFs which are a pain to read as it involves pinch zooming.
