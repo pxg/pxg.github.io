@@ -1,6 +1,6 @@
 ---
 title: Publishing Jekyll Articles from an iPhone
-date: 2026-02-06
+date: 2026-02-04 23:30:00
 layout: post
 ---
 This site is built using Jekyll and GitHub pages. I’ve recently started writing articles on my phone, using Obsidian, but my publishing workflow involved me jumping on my laptop and publishing the post using Cursor and Git.
