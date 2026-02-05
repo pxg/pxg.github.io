@@ -15,3 +15,7 @@ Getting started is fairly straightforward, you log-in to Pages CMS with your Git
 Initial impressions are good, the editor can be a little bit fiddly on the iPhone in particular adding in links. In particular, the image support is surprisingly good and easy to use.
 
 The main thing is this has made it significantly easier for me to edit and update articles which is exactly what I was looking for. If you want to do something more; make it easy to do.
+
+Below a very meta screenshot of the UI in Page CMS for me editing this post.
+
+![](/assets/images/posts/Screenshot%202026-02-05%20at%2010.24.52.png)
