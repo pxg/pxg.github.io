@@ -5,7 +5,7 @@ layout: post
 ---
 "Hell Yes or No" is something that I discovered from Derek Sivers. The idea is simple: when deciding whether to say yes to an opportunity, it should make you want to say "Hell Yes!" If not, it should be a no.
 
-\[insert stone cold steve austin meme\]
+![](/assets/images/posts/hell%20yes.gif)
 
 As a rule of thumb, I think this is really good advice, only this week I had to remind myself of it.
 
