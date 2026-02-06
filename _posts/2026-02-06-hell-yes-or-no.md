@@ -3,7 +3,7 @@ title: Hell Yeah or No
 date: 2026-02-06
 layout: post
 ---
-"Hell Yeah or No" is something that I discovered from Derek Sivers. The idea is simple: when deciding whether to say yes to an opportunity, it should make you want to say "Hell Yes!" If not, it should be a no.
+"Hell Yeah or No" is something that I discovered from Derek Sivers. The idea is simple: when deciding whether to say yes to an opportunity, it should make you want to say "Hell Yeah!" If not, it should be a no.
 
 ![](/assets/images/posts/hell%20yes.gif)
 
